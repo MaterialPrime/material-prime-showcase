@@ -14,6 +14,6 @@ public class PostConstructApplicationEventListener implements SystemEventListene
 	}
 
 	public void processEvent(final SystemEvent event) {
-		LOGGER.log(Level.INFO, "Running on MaterialPrime {0}", this.getClass().getPackage().getSpecificationVersion());
+		LOGGER.log(Level.INFO, "Running on MaterialPrime 0.0.1-SNAPSHOT");
 	}
 }
