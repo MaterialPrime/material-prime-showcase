@@ -11,6 +11,17 @@
 			<url>ftp://ftp.francescostrazzullo.info//www.francescostrazzullo.info/blog/maven</url>
 		</repository>
 	</distributionManagement>
+	<developers>
+        <developer>
+            <id>francesco.strazzullo</id>
+            <name>Francesco Strazzullo</name>
+            <email>francesco.strazzullo86@gmail.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+            <timezone>+1</timezone>
+        </developer>
+    </developers>
 	<dependencies>
 		<!-- PrimeFaces -->
 		<dependency>
@@ -53,19 +64,6 @@
 				<configuration>
 					<source>1.6</source>
 					<target>1.6</target>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-jar-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-					<archive>
-						<manifest>
-							<addDefaultImplementationEntries>true</addDefaultImplementationEntries>
-							<addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-						</manifest>
-					</archive>
 				</configuration>
 			</plugin>
 			<plugin>
