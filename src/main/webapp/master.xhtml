@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:mp="http://primefaces.org/ui/material">
+<h:head>
+	<h:outputStylesheet library="css" name="fonts.css"/>
+</h:head>
+<h:body>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<div class="bs-component">
+                     <div class="navbar navbar-warning">
+                         <div class="navbar-header">
+                             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-warning-collapse">
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                             </button>
+                             <h:outputLink class="navbar-brand" value="index.xhtml" >
+								<i id="icon-prime" class="icon-prime"></i>
+							</h:outputLink>
+                         </div>
+                         <div class="navbar-collapse collapse navbar-warning-collapse">
+                             <ul class="nav navbar-nav">
+                                 <li>
+                                	<h:outputLink value="components.xhtml" >
+										Components
+									</h:outputLink>
+                                 </li>
+                                 <li>
+                                	<h:outputLink value="team.xhtml" >
+										Team
+									</h:outputLink>
+                                 </li>
+                             </ul>
+                         </div>
+                     </div>
+                  </div>
+			</div>
+		</div>
+		<div class="row">
+			<ui:insert name="page"/>
+		</div>
+	</div>
+	<mp:toggle value="true" rendered="false">
+		<p:ajax oncomplete="alert('pippo');"/>
+	</mp:toggle>
+</h:body>
+</html>
