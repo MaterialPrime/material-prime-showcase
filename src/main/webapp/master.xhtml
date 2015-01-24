@@ -22,19 +22,26 @@
                                  <span class="icon-bar"></span>
                                  <span class="icon-bar"></span>
                              </button>
-                             <h:outputLink class="navbar-brand" value="index.xhtml" >
+                             <h:outputLink class="navbar-brand" value="/showcase/index.xhtml" >
 								<i id="icon-prime" class="icon-prime"></i>
 							</h:outputLink>
                          </div>
                          <div class="navbar-collapse collapse navbar-warning-collapse">
                              <ul class="nav navbar-nav">
+                                 <li class="dropdown">
+					                <a class="dropdown-toggle" data-toggle="dropdown">
+					                	Components <b class="caret"></b>
+					                </a>
+					                <ul class="dropdown-menu">
+					                    <li>
+					                    	<h:outputLink value="/showcase/components/icon.xhtml" >
+												Icon
+											</h:outputLink>
+					                    </li>
+					                </ul>
+					            </li>
                                  <li>
-                                	<h:outputLink value="components.xhtml" >
-										Components
-									</h:outputLink>
-                                 </li>
-                                 <li>
-                                	<h:outputLink value="team.xhtml" >
+                                	<h:outputLink value="/showcase/team.xhtml" >
 										Team
 									</h:outputLink>
                                  </li>
@@ -53,6 +60,6 @@
 			<ui:insert name="page"/>
 		</div>
 	</div>
-	<mp:icon name="mdi-action-visibility"/>
+	<mp:icon name="mdi-action-visibility" rendered="false"/>
 </h:body>
 </html>
