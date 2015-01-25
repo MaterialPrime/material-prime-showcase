@@ -61,7 +61,7 @@
 				<version>8.1.16.v20140903</version>
 				<configuration>
 					<webAppConfig>
-						<contextPath>/showcase</contextPath>
+						<contextPath>/</contextPath>
 						<overrideDescriptor>src/main/webapp/WEB-INF/web-overwrite.xml</overrideDescriptor>
 					</webAppConfig>
 					<webXml>${project.build.directory}/classes/WEB-INF/web.xml</webXml>
