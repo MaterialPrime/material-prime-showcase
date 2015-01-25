@@ -38,6 +38,11 @@
 												Icon
 											</h:outputLink>
 					                    </li>
+					                    <li>
+					                    	<h:outputLink value="#{request.contextPath}/components/toggle.xhtml" >
+												Toggle
+											</h:outputLink>
+					                    </li>
 					                </ul>
 					            </li>
                                  <li>
@@ -57,7 +62,9 @@
 			</div>
 		</div>
 		<div class="row">
-			<ui:insert name="page"/>
+			<h:form>
+				<ui:insert name="page"/>
+			</h:form>
 		</div>
 	</div>
 	<mp:icon name="mdi-action-visibility" rendered="false"/>
