@@ -1,3 +1,6 @@
 material-prime/target
 showcase/target
 target
+.classpath
+.project
+.settings/
