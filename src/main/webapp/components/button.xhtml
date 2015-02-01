@@ -1,0 +1,17 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+    <ui:define name="page">
+       	<h1 class="text-center">Button</h1>
+       	<div class="container">
+			<mp:button value="Update" look="primary" size="large" level="raised" update="pnlTime"/>
+			<p:outputPanel id="pnlTime">
+				<h:outputText value="#{buttonBean.time}"/>
+			</p:outputPanel>
+     	</div>
+    </ui:define>
+</ui:composition>
+</html>
