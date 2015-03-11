@@ -1,5 +1,6 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:mp="http://primefaces.org/ui/material"
       xmlns:p="http://primefaces.org/ui">
@@ -40,6 +41,13 @@
 					</div>
 					<div class="row">
 						<mp:input label="Small Input" height="small"/>
+					</div>
+					<div class="row">
+						<mp:input label="Addons" placeholder="Addons">
+							<f:facet name="preAddon">
+								<mp:icon name="mdi-image-edit"/>
+							</f:facet>
+						</mp:input>
 					</div>
 				</div>
 				<div class="tab-pane fade" id="page">
