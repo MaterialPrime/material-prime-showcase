@@ -1,0 +1,38 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+    <ui:define name="page">
+       	<h1 class="text-center">RadioButton</h1>
+       	<div class="container">
+       		<div class="row">
+				<div class="span6">
+					<mp:radioButton value="#{radioButtonBean.valueFixed}">
+						<f:selectItem itemLabel="Fixed Option 1" itemValue="1" />
+		           		<f:selectItem itemLabel="Fixed Option 2" itemValue="2" />
+						<p:ajax update="@form" process="@this" />
+					</mp:radioButton>
+				</div>			
+				<div class="span4">
+					<h:outputText value="Fixed value: #{radioButtonBean.valueFixed}" />
+				</div>				
+			</div>
+			<div class="row">
+				<div class="span6">
+					<mp:radioButton value="#{radioButtonBean.valueDynamically}">
+						<f:selectItems value="#{radioButtonBean.list}" var="c" itemLabel="#{city}" itemValue="#{city}"/>
+						<p:ajax update="@form" process="@form" />
+					</mp:radioButton>
+				</div>			
+				<div class="span4">
+					<h:outputText value="Dynamically value: #{radioButtonBean.valueDynamically}" />
+				</div>	
+			</div>
+			
+     	</div>
+    </ui:define>
+</ui:composition>
+</html>
