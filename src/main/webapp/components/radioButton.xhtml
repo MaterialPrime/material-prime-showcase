@@ -13,22 +13,22 @@
 					<mp:radioButton value="#{radioButtonBean.valueFixed}">
 						<f:selectItem itemLabel="Fixed Option 1" itemValue="1" />
 		           		<f:selectItem itemLabel="Fixed Option 2" itemValue="2" />
-						<p:ajax update="@form" process="@this" />
+						<p:ajax update="fixedValue" process="@this" />
 					</mp:radioButton>
 				</div>			
 				<div class="span4">
-					<h:outputText value="Fixed value: #{radioButtonBean.valueFixed}" />
+					<h:outputText id="fixedValue" value="Fixed value: #{radioButtonBean.valueFixed}" />
 				</div>				
 			</div>
 			<div class="row">
 				<div class="span6">
 					<mp:radioButton value="#{radioButtonBean.valueDynamically}">
 						<f:selectItems value="#{radioButtonBean.list}" var="c" itemLabel="#{city}" itemValue="#{city}"/>
-						<p:ajax update="@form" process="@form" />
+						<p:ajax update="dynamicValue" process="@this" />
 					</mp:radioButton>
 				</div>			
 				<div class="span4">
-					<h:outputText value="Dynamically value: #{radioButtonBean.valueDynamically}" />
+					<h:outputText id="dynamicValue" value="Dynamically value: #{radioButtonBean.valueDynamically}" />
 				</div>	
 			</div>
 			

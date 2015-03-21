@@ -22,13 +22,13 @@
 			</div>
 			<div class="row">
 				<div class="col-lg-6">
-					<mp:selectOne value="#{selectOneBean.valueDynamically}">
+					<mp:selectOne value="#{selectOneBean.valueDynamic}">
 						<f:selectItems value="#{selectOneBean.list}" />
 						<p:ajax update="@form" process="@this" />
 					</mp:selectOne>
 				</div>			
 				<div class="col-lg-4">
-					<h:outputText value="Dynamically value: #{selectOneBean.valueDynamically}" />	
+					<h:outputText value="Dynamic value: #{selectOneBean.valueDynamic}" />	
 				</div>	
 			</div>			
      	</div>
