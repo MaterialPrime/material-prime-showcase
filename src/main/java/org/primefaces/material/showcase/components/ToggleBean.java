@@ -11,14 +11,23 @@ public class ToggleBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private boolean value;
+	private boolean bluetooth;
+	private boolean wifi;
 
-	public boolean isValue() {
-		return value;
+	public boolean isBluetooth() {
+		return bluetooth;
 	}
 
-	public void setValue(boolean value) throws InterruptedException {
-		this.value = value;
+	public void setBluetooth(boolean value) throws InterruptedException {
+		this.bluetooth = value;
+	}
+
+	public boolean isWifi() {
+		return wifi;
+	}
+
+	public void setWifi(boolean wifi) {
+		this.wifi = wifi;
 	}
 
 }
