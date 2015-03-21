@@ -8,29 +8,42 @@
     <ui:define name="page">
        	<h1 class="text-center">SelectOne</h1>
        	<div class="container">
-			<div class="row">
-				<div class="col-lg-6">
-					<mp:selectOne value="#{selectOneBean.valueFixed}">
-						<f:selectItem itemLabel="s1" itemValue="1" />
-		           		<f:selectItem itemLabel="s2" itemValue="2" />
-						<p:ajax update="@form" process="@this" />
-					</mp:selectOne>
-				</div>			
-				<div class="col-lg-4">
-					<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
-				</div>	
-			</div>
-			<div class="row">
-				<div class="col-lg-6">
-					<mp:selectOne value="#{selectOneBean.valueDynamic}">
-						<f:selectItems value="#{selectOneBean.list}" />
-						<p:ajax update="@form" process="@this" />
-					</mp:selectOne>
-				</div>			
-				<div class="col-lg-4">
-					<h:outputText value="Dynamic value: #{selectOneBean.valueDynamic}" />	
-				</div>	
-			</div>			
+       		<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+				<li><a href="#example" data-toggle="tab">Example</a></li>
+				<li><a href="#page" data-toggle="tab">Page</a></li>
+				<li><a href="#bean" data-toggle="tab">Bean</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="example">
+					<div class="row">
+						<div class="col-xs-6">
+							<mp:selectOne value="#{selectOneBean.valueFixed}">
+								<f:selectItem itemLabel="s1" itemValue="1" />
+				           		<f:selectItem itemLabel="s2" itemValue="2" />
+								<p:ajax update="@form" process="@this" />
+							</mp:selectOne>
+						</div>
+						<div class="col-xs-6">
+							<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
+						</div>
+					</div>
+					<div class="row" style="margin-top:30px">
+						<div class="col-xs-6">
+							<mp:selectOne value="#{selectOneBean.valueDynamic}">
+								<f:selectItems value="#{selectOneBean.list}" />
+								<p:ajax update="@form" process="@this" />
+							</mp:selectOne>
+						</div>
+						<div class="col-xs-6">
+							<h:outputText value="Dynamic value: #{selectOneBean.valueDynamic}" />		
+						</div>
+					</div>
+				</div>
+				<div class="tab-pane fade" id="page">
+				</div>
+				<div class="tab-pane fade" id="bean">
+				</div>
+			</div>					
      	</div>
     </ui:define>
 </ui:composition>

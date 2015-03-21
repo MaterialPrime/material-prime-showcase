@@ -8,30 +8,42 @@
     <ui:define name="page">
        	<h1 class="text-center">RadioButton</h1>
        	<div class="container">
-       		<div class="row">
-				<div class="span6">
-					<mp:radioButton value="#{radioButtonBean.valueFixed}">
-						<f:selectItem itemLabel="Fixed Option 1" itemValue="1" />
-		           		<f:selectItem itemLabel="Fixed Option 2" itemValue="2" />
-						<p:ajax update="fixedValue" process="@this" />
-					</mp:radioButton>
-				</div>			
-				<div class="span4">
-					<h:outputText id="fixedValue" value="Fixed value: #{radioButtonBean.valueFixed}" />
-				</div>				
-			</div>
-			<div class="row">
-				<div class="span6">
-					<mp:radioButton value="#{radioButtonBean.valueDynamically}">
-						<f:selectItems value="#{radioButtonBean.list}" var="c" itemLabel="#{city}" itemValue="#{city}"/>
-						<p:ajax update="dynamicValue" process="@this" />
-					</mp:radioButton>
-				</div>			
-				<div class="span4">
-					<h:outputText id="dynamicValue" value="Dynamically value: #{radioButtonBean.valueDynamically}" />
-				</div>	
-			</div>
-			
+       		<ul class="nav nav-tabs" style="margin-bottom: 15px;">
+				<li><a href="#example" data-toggle="tab">Example</a></li>
+				<li><a href="#page" data-toggle="tab">Page</a></li>
+				<li><a href="#bean" data-toggle="tab">Bean</a></li>
+			</ul>
+			<div class="tab-content">
+				<div class="tab-pane fade active in" id="example">
+					<div class="row">
+						<div class="col-xs-6">
+							<mp:radioButton value="#{radioButtonBean.valueFixed}">
+								<f:selectItem itemLabel="Fixed Option 1" itemValue="1" />
+				           		<f:selectItem itemLabel="Fixed Option 2" itemValue="2" />
+								<p:ajax update="fixedValue" process="@this" />
+							</mp:radioButton>
+						</div>
+						<div class="col-xs-6">
+							<h:outputText id="fixedValue" value="Fixed value: #{radioButtonBean.valueFixed}" />
+						</div>
+		       		</div>
+		       		<div class="row">
+						<div class="col-xs-6">
+							<mp:radioButton value="#{radioButtonBean.valueDynamically}">
+								<f:selectItems value="#{radioButtonBean.list}" var="c" itemLabel="#{city}" itemValue="#{city}"/>
+								<p:ajax update="dynamicValue" process="@this" />
+							</mp:radioButton>
+						</div>
+						<div class="col-xs-6">
+							<h:outputText id="dynamicValue" value="Dynamically value: #{radioButtonBean.valueDynamically}" />
+						</div>
+		       		</div>
+		       	</div>
+		       	<div class="tab-pane fade" id="page">
+				</div>
+				<div class="tab-pane fade" id="bean">
+				</div>
+		    </div>       		
      	</div>
     </ui:define>
 </ui:composition>
