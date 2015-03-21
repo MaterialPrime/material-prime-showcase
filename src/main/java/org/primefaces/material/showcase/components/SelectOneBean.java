@@ -14,7 +14,7 @@ public class SelectOneBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String valueFixed = "1";
+	private Object valueFixed = "1";
 	private Object valueDynamic = "1";
 	private List<SelectItem> list;
 	
@@ -25,11 +25,11 @@ public class SelectOneBean implements Serializable{
 		list.add(new SelectItem("3", "Option 3")); 
 	}
 	
-	public String getValueFixed() {
+	public Object getValueFixed() {
 		return valueFixed;
 	}
 	
-	public void setValueFixed(String valueFixed) {
+	public void setValueFixed(Object valueFixed) {
 		this.valueFixed = valueFixed;
 	}
 	

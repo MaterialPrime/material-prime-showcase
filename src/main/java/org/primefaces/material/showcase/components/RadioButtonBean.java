@@ -14,8 +14,8 @@ public class RadioButtonBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String valueFixed = "1";
-	private Object valueDynamically;
+	private Object valueFixed = "1";
+	private Object valueDynamic = "1";
 	private List<SelectItem> list;
 	
 	public RadioButtonBean() {
@@ -25,20 +25,20 @@ public class RadioButtonBean implements Serializable{
 		list.add(new SelectItem("3", "Option 3")); 
 	}
 	
-	public String getValueFixed() {
+	public Object getValueFixed() {
 		return valueFixed;
 	}
 	
-	public void setValueFixed(String valueFixed) {
+	public void setValueFixed(Object valueFixed) {
 		this.valueFixed = valueFixed;
 	}
 	
-	public Object getValueDynamically() {
-		return valueDynamically;
+	public Object getValueDynamic() {
+		return valueDynamic;
 	}
 	
-	public void setValueDynamically(Object valueDynamically) {
-		this.valueDynamically = valueDynamically;
+	public void setValueDynamic(Object valueDynamic) {
+		this.valueDynamic = valueDynamic;
 	}
 
 	public List<SelectItem> getList() {

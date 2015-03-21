@@ -29,19 +29,99 @@
 		       		</div>
 		       		<div class="row">
 						<div class="col-xs-6">
-							<mp:radioButton value="#{radioButtonBean.valueDynamically}">
-								<f:selectItems value="#{radioButtonBean.list}" var="c" itemLabel="#{city}" itemValue="#{city}"/>
+							<mp:radioButton value="#{radioButtonBean.valueDynamic}">
+								<f:selectItems value="#{radioButtonBean.list}" />
 								<p:ajax update="dynamicValue" process="@this" />
 							</mp:radioButton>
 						</div>
 						<div class="col-xs-6">
-							<h:outputText id="dynamicValue" value="Dynamically value: #{radioButtonBean.valueDynamically}" />
+							<h:outputText id="dynamicValue" value="Dynamic value: #{radioButtonBean.valueDynamic}" />
 						</div>
 		       		</div>
 		       	</div>
 		       	<div class="tab-pane fade" id="page">
+		       	<pre>
+						<code>
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;mp:radioButton value=&quot;#{'#{radioButtonBean.valueFixed}'}&quot;&gt;
+			&lt;f:selectItem itemLabel=&quot;Fixed Option 1&quot; itemValue=&quot;1&quot; /&gt;
+			&lt;f:selectItem itemLabel=&quot;Fixed Option 2&quot; itemValue=&quot;2&quot; /&gt;
+			&lt;p:ajax update=&quot;fixedValue&quot; process=&quot;@this&quot; /&gt;
+		&lt;/mp:radioButton&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText id=&quot;fixedValue&quot; value=&quot;Fixed value: #{'#{radioButtonBean.valueFixed}'}&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;mp:radioButton value=&quot;#{'#{radioButtonBean.valueDynamic}'}&quot;&gt;
+			&lt;f:selectItems value=&quot;#{'#{radioButtonBean.list}'}&quot; /&gt;
+			&lt;p:ajax update=&quot;dynamicValue&quot; process=&quot;@this&quot; /&gt;
+		&lt;/mp:radioButton&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText id=&quot;dynamicValue&quot; value=&quot;Dynamic value: #{'#{radioButtonBean.valueDynamic}'}&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;		       	
+</code>
+					</pre>
 				</div>
 				<div class="tab-pane fade" id="bean">
+				 	<pre>
+						<code>
+package org.primefaces.material.showcase.components;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
+
+@ManagedBean
+@ViewScoped
+public class RadioButtonBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	private Object valueFixed = &quot;1&quot;;
+	private Object valueDynamic = &quot;1&quot;;
+	private List&lt;SelectItem&gt; list;
+	
+	public RadioButtonBean() {
+		list = new ArrayList&lt;SelectItem&gt;();
+		list.add(new SelectItem(&quot;1&quot;, &quot;Option 1&quot;));
+		list.add(new SelectItem(&quot;2&quot;, &quot;Option 2&quot;));
+		list.add(new SelectItem(&quot;3&quot;, &quot;Option 3&quot;));
+	}
+	
+	public Object getValueFixed() {
+		return valueFixed;
+	}
+	
+	public void setValueFixed(Object valueFixed) {
+		this.valueFixed = valueFixed;
+	}
+	
+	public Object getValueDynamic() {
+		return valueDynamic;
+	}
+	
+	public void setValueDynamic(Object valueDynamic) {
+		this.valueDynamic = valueDynamic;
+	}
+	
+	public List&lt;SelectItem&gt; getList() {
+		return list;
+	}
+	
+	public void setList(List&lt;SelectItem&gt; list) {
+		this.list = list;
+	}
+}
+			</code>
+					</pre>	
 				</div>
 		    </div>       		
      	</div>

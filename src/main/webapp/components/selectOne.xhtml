@@ -18,8 +18,8 @@
 					<div class="row">
 						<div class="col-xs-6">
 							<mp:selectOne value="#{selectOneBean.valueFixed}">
-								<f:selectItem itemLabel="s1" itemValue="1" />
-				           		<f:selectItem itemLabel="s2" itemValue="2" />
+								<f:selectItem itemLabel="Option 1" itemValue="1" />
+				           		<f:selectItem itemLabel="Option 2" itemValue="2" />
 								<p:ajax update="@form" process="@this" />
 							</mp:selectOne>
 						</div>
@@ -40,8 +40,88 @@
 					</div>
 				</div>
 				<div class="tab-pane fade" id="page">
+					<pre>
+						<code>
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;mp:selectOne value=&quot;#{'#{selectOneBean.valueFixed}'}&quot;&gt;
+			&lt;f:selectItem itemLabel=&quot;Option 1&quot; itemValue=&quot;1&quot; /&gt;
+			&lt;f:selectItem itemLabel=&quot;Option 2&quot; itemValue=&quot;2&quot; /&gt;
+			&lt;p:ajax update=&quot;@form&quot; process=&quot;@this&quot; /&gt;
+		&lt;/mp:selectOne&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText value=&quot;Fixed value: #{'#{selectOneBean.valueFixed}'}&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class=&quot;row&quot; style=&quot;margin-top:30px&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;mp:selectOne value=&quot;#{'#{selectOneBean.valueDynamic}'}&quot;&gt;
+			&lt;f:selectItems value=&quot;#{'#{selectOneBean.list}'}&quot; /&gt;
+			&lt;p:ajax update=&quot;@form&quot; process=&quot;@this&quot; /&gt;
+		&lt;/mp:selectOne&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText value=&quot;Dynamic value: #{'#{selectOneBean.valueDynamic}'}&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+						</code>
+					</pre>
 				</div>
 				<div class="tab-pane fade" id="bean">
+				<pre>
+						<code>
+package org.primefaces.material.showcase.components;
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ViewScoped;
+import javax.faces.model.SelectItem;
+
+@ManagedBean
+@ViewScoped
+public class SelectOneBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+
+	private Object valueFixed = &quot;1&quot;;
+	private Object valueDynamic = &quot;1&quot;;
+	private List&lt;SelectItem&gt; list;
+	
+	public SelectOneBean() {
+		list = new ArrayList&lt;SelectItem&gt;();
+		list.add(new SelectItem(&quot;1&quot;, &quot;Option 1&quot;));
+		list.add(new SelectItem(&quot;2&quot;, &quot;Option 2&quot;));
+		list.add(new SelectItem(&quot;3&quot;, &quot;Option 3&quot;));
+	}
+	
+	public Object getValueFixed() {
+		return valueFixed;
+	}
+	
+	public void setValueFixed(Object valueFixed) {
+		this.valueFixed = valueFixed;
+	}
+	
+	public Object getValueDynamic() {
+		return valueDynamic;
+	}
+	
+	public void setValueDynamic(Object valueDynamic) {
+		this.valueDynamic = valueDynamic;
+	}
+	
+	public List&lt;SelectItem&gt; getList() {
+		return list;
+	}
+	
+	public void setList(List&lt;SelectItem&gt; list) {
+		this.list = list;
+	}
+}
+					</code>
+					</pre>
 				</div>
 			</div>					
      	</div>
