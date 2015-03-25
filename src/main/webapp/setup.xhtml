@@ -1,0 +1,33 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="master.xhtml">
+    <ui:define name="page">
+       	<h1 class="text-center">Setup</h1>
+       	<div class="jumbotron">
+		   You need to build the latest release of MaterialPrime with <strong>Maven</strong> and <strong>git</strong>. Open a terminal and just enter this command:
+<pre>
+<code>
+git clone https://github.com/francesco-strazzullo/material-prime.git
+cd material-prime
+mvn install
+</code>
+</pre>
+			Now you can use MaterialPrime adding the dependency to the pom.xml file.
+			
+<pre>
+<code>
+&lt;dependency&gt;
+	&lt;groupId&gt;org.primefaces.material&lt;/groupId&gt;
+	&lt;artifactId&gt;material-prime&lt;/artifactId&gt;
+	&lt;version&gt;0.0.1-SNAPSHOT&lt;/version&gt;
+&lt;/dependency&gt;
+</code>
+</pre>		
+			Enjoy! :) 
+		</div>
+    </ui:define>
+</ui:composition>
+</html>
