@@ -8,10 +8,8 @@
        	<h1 class="text-center">Icon</h1>
        	<div class="container">
 			<ui:repeat var="iconName" value="#{iconBean.icons}">
-   				<div class="col-xs-6 col-md-4">
-  					<p class="lead">
-   						#{iconName} <mp:icon name="#{iconName}"/>
-   					</p>
+   				<div class="col s4">
+  					#{iconName} <mp:icon name="#{iconName}"/>
   				</div>
    			</ui:repeat>
      	</div>
