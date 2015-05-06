@@ -1,5 +1,5 @@
 cd $OPENSHIFT_DATA_DIR
 rm -rf material-prime
-git clone https://github.com/francesco-strazzullo/material-prime.git
+git clone https://github.com/MaterialPrime/material-prime.git
 cd material-prime
 mvn install
