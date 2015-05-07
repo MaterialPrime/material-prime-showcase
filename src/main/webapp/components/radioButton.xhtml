@@ -29,7 +29,7 @@
 		       		</div>
 		       		<div class="row">
 						<div class="col-xs-6">
-							<mp:radioButton value="#{radioButtonBean.valueDynamic}">
+							<mp:radioButton withGap="true" value="#{radioButtonBean.valueDynamic}">
 								<f:selectItems value="#{radioButtonBean.list}" />
 								<p:ajax update="dynamicValue" process="@this" />
 							</mp:radioButton>
