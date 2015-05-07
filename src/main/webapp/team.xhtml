@@ -1,46 +1,87 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:mp="http://primefaces.org/ui/material"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="master.xhtml">
-    <ui:define name="page">
-       	<h1 class="text-center">Team</h1>
-       	<div class="jumbotron">
-		    <div class="contaiiner-fluid">
-		    	<div class="row">
-		    		<div class="col-md-2">
-		    			<p:graphicImage styleClass="img-responsive img-circle" library="images" name="strazzullo.jpg"/>
-		    		</div>
-		    		<div class="col-md-10">
-		    			<h2><a target="_blank" href="https://twitter.com/TheStrazz86">Francesco Strazzullo</a></h2>
-		    			<p class="lead">
-		    				I'm a J2EE software architect, I usually work on applications built with the Spring+Hibernate+JSF 2.X+Primefaces Stack. I'm the lead architect of JAF (Java Apra Framework): a RAD framework used to create enteprise web application. 
-		    				Recently I'm working on AngularJS applications. I also deal with Business Process Management using the BPM Engine Activiti.
-<br/>
-I'm also a Collaborator in the PrimeFaces extensions project.
-		    			</p>
-		    		</div>
-		    	</div>
-		    </div>
+	<ui:define name="page">
+		<h1 class="text-center">Team</h1>
+		<div class="row">
+			<div class="col s12">
+				<div class="card blue-grey darken-1">
+					<div class="card-content white-text">
+						<span class="card-title">Francesco Strazzullo</span>
+						<div class="row">
+							<div class="col s2">
+								<p:graphicImage styleClass="img-responsive img-circle"
+									library="images" name="strazzullo.jpg" />
+							</div>
+							<div class="col s10">
+								<p>
+									I'm a J2EE software architect, I usually work on applications
+									built with the Spring+Hibernate+JSF 2.X+Primefaces Stack. I'm
+									the lead architect of JAF (Java Apra Framework): a RAD
+									framework used to create enteprise web application. Recently
+									I'm working on AngularJS applications. I also deal with
+									Business Process Management using the BPM Engine Activiti. <br />
+									I'm also a Collaborator in the PrimeFaces extensions project.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="card-action white-text">
+						<a target="_blank" href="https://twitter.com/TheStrazz86">
+							<i class="fa fa-2x fa-twitter-square"></i>
+						</a>
+						<a target="_blank" href="https://plus.google.com/u/0/+FrancescoStrazzullo86/">
+							<i class="fa fa-2x fa-google-plus-square"></i>
+						</a>
+						<a target="_blank" href="https://it.linkedin.com/in/francescostrazzullo">
+							<i class="fa fa-2x fa-linkedin-square"></i>
+						</a>
+						<a target="_blank" href="https://github.com/francesco-strazzullo">
+							<i class="fa fa-2x fa-github-square"></i>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-		<div class="jumbotron">
-		    <div class="contaiiner-fluid">
-		    	<div class="row">
-		    		<div class="col-md-2">
-		    			<p:graphicImage styleClass="img-responsive img-circle" library="images" name="cardinali.png"/>
-		    		</div>
-		    		<div class="col-md-10">
-		    			<h2><a target="_blank" href="https://twitter.com/lucacard87">Luca Cardinali</a></h2>
-		    			<p class="lead">
-		    				I have a degree in Informatics and I'm Software Developer and Technical Analyst, I'm specialized mainly in web based systems with J2EE technology 
-(usually the Spring+Hibernate+JSF 2.X+Primefaces Stack). Recently I started to work with Alfresco (Document management system) to integrate it in a J2EE web 
-base application and with Ionic/AngularJs for mobile Web Apps.
-		    			</p>
-		    		</div>
-		    	</div>
-		    </div>
+		<div class="row">
+			<div class="col s12">
+				<div class="card blue-grey darken-1">
+					<div class="card-content white-text">
+						<span class="card-title">
+							Luca Cardinali
+						</span>
+						<div class="row">
+							<div class="col s2">
+								<p:graphicImage styleClass="img-responsive img-circle"
+									library="images" name="cardinali.png" />
+							</div>
+							<div class="col s10">
+								<p>
+									I have a degree in Informatics and I'm
+							Software Developer and Technical Analyst, I'm specialized mainly
+							in web based systems with J2EE technology (usually the
+							Spring+Hibernate+JSF 2.X+Primefaces Stack). Recently I started to
+							work with Alfresco (Document management system) to integrate it
+							in a J2EE web base application and with Ionic/AngularJs for
+							mobile Web Apps.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="card-action white-text">
+						<a target="_blank" href="https://twitter.com/lucacard87">
+							<i class="fa fa-2x fa-twitter-square"></i>
+						</a>
+						<a target="_blank" href="https://it.linkedin.com/in/lucacardinali87">
+							<i class="fa fa-2x fa-linkedin-square"></i>
+						</a>
+					</div>
+				</div>
+			</div>
 		</div>
-    </ui:define>
+	</ui:define>
 </ui:composition>
 </html>
