@@ -1,68 +1,75 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:mp="http://primefaces.org/ui/material"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/master.xhtml">
 	<ui:define name="page">
 		<h1 class="text-center">Checkbox</h1>
-		<div class="container">
-			<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-				<li><a href="#example" data-toggle="tab">Example</a></li>
-				<li><a href="#page" data-toggle="tab">Page</a></li>
-				<li><a href="#bean" data-toggle="tab">Bean</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="example">
-					<div class="row">
-						<div class="col-xs-6">
-							<mp:checkbox value="#{checkboxBean.bluetooth}" itemLabel="Bluetooth">
-								<p:ajax update="bluetoothStatus" />
-							</mp:checkbox>
-						</div>
-						<div class="col-xs-6">
-							<h:outputText id="bluetoothStatus" value="#{checkboxBean.bluetooth ? 'active' : 'inactive'}"/>
-						</div>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Example</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<div class="row">
+					<div class="col s6">
+						<mp:checkbox value="#{checkboxBean.bluetooth}"
+							itemLabel="Bluetooth">
+							<p:ajax update="bluetoothStatus" />
+						</mp:checkbox>
 					</div>
-					<div class="row">
-						<div class="col-xs-6">
-							<mp:checkbox value="#{checkboxBean.wifi}" itemLabel="Wi-fi">
-								<p:ajax update="wifiStatus" />
-							</mp:checkbox>
-						</div>
-						<div class="col-xs-6">
-							<h:outputText id="wifiStatus" value="#{checkboxBean.wifi ? 'active' : 'inactive'}"/>
-						</div>
+					<div class="col s6">
+						<h:outputText id="bluetoothStatus"
+							value="#{checkboxBean.bluetooth ? 'active' : 'inactive'}" />
 					</div>
 				</div>
-				<div class="tab-pane fade" id="page">
+				<div class="row">
+					<div class="col s6">
+						<mp:checkbox value="#{checkboxBean.wifi}" itemLabel="Wi-fi">
+							<p:ajax update="wifiStatus" />
+						</mp:checkbox>
+					</div>
+					<div class="col s6">
+						<h:outputText id="wifiStatus"
+							value="#{checkboxBean.wifi ? 'active' : 'inactive'}" />
+					</div>
+				</div>
+			</div>
+			<div id="page" class="col s12">
 <pre>
 <code>
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;mp:checkbox value=&quot;#{'#{checkboxBean.bluetooth}'}&quot; itemLabel=&quot;Bluetooth&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;mp:checkbox value=&quot;#{'#{checkboxBean.bluetooth}'}&quot;
+			itemLabel=&quot;Bluetooth&quot;&gt;
 			&lt;p:ajax update=&quot;bluetoothStatus&quot; /&gt;
 		&lt;/mp:checkbox&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText id=&quot;bluetoothStatus&quot; value=&quot;#{'#{checkboxBean.bluetooth ? \'active\' : \'inactive\'}'}&quot;/&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;h:outputText id=&quot;bluetoothStatus&quot;
+			value=&quot;#{'#{checkboxBean.bluetooth ? \'active\' : \'inactive\'}'}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
 		&lt;mp:checkbox value=&quot;#{'#{checkboxBean.wifi}'}&quot; itemLabel=&quot;Wi-fi&quot;&gt;
 			&lt;p:ajax update=&quot;wifiStatus&quot; /&gt;
 		&lt;/mp:checkbox&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText id=&quot;wifiStatus&quot; value=&quot;#{'#{checkboxBean.wifi ? \'active\' : \'inactive\'}'}&quot;/&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;h:outputText id=&quot;wifiStatus&quot;
+			value=&quot;#{'#{checkboxBean.wifi ? \'active\' : \'inactive\'}'}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
-				</div>
-				<div class="tab-pane fade" id="bean">
-<pre>
+			</div>
+			<div id="bean" class="col s12">
+				<pre>
 <code>
 @ManagedBean
 @ViewScoped
@@ -92,7 +99,6 @@ public class CheckboxBean implements Serializable{
 }
 </code>
 </pre>
-				</div>
 			</div>
 		</div>
 	</ui:define>
