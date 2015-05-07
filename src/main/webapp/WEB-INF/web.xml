@@ -6,6 +6,41 @@
 	<display-name>material-showcase</display-name>
 	<description>MaterialPrime Showcase Application</description>
 	
+	<mime-mapping> 
+    	<extension>svg</extension> 
+    	<mime-type>image/svg+xml</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>ttf</extension> 
+    	<mime-type>application/x-font-ttf</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>otf</extension> 
+    	<mime-type>application/x-font-opentype</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>woff</extension> 
+    	<mime-type>application/font-woff</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>woff2</extension> 
+    	<mime-type>application/font-woff2</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>eot</extension> 
+    	<mime-type>application/vnd.ms-fontobject</mime-type> 
+	</mime-mapping>
+	
+	<mime-mapping> 
+    	<extension>sfnt</extension> 
+    	<mime-type>application/font-sfnt</mime-type> 
+	</mime-mapping>
+	
 	<context-param>
 		<param-name>javax.faces.PROJECT_STAGE</param-name>
 		<param-value>Development</param-value>
