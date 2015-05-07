@@ -15,29 +15,41 @@
 			</ul>
 			<div class="tab-content">
 				<div class="tab-pane fade active in" id="example">
-					<div class="row">
+					<p:outputPanel id="firstRow" layout="block" styleClass="row">
 						<div class="col-xs-6">
 							<mp:selectOne value="#{selectOneBean.valueFixed}">
 								<f:selectItem itemLabel="Option 1" itemValue="1" />
 				           		<f:selectItem itemLabel="Option 2" itemValue="2" />
-								<p:ajax update="@form" process="@this" />
+								<p:ajax update="firstRow" process="@this" />
 							</mp:selectOne>
 						</div>
 						<div class="col-xs-6">
 							<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
 						</div>
-					</div>
-					<div class="row" style="margin-top:30px">
+					</p:outputPanel>
+					<p:outputPanel id="secondRow" layout="block" styleClass="row">
 						<div class="col-xs-6">
 							<mp:selectOne value="#{selectOneBean.valueDynamic}">
 								<f:selectItems value="#{selectOneBean.list}" />
-								<p:ajax update="@form" process="@this" />
+								<p:ajax update="secondRow" process="@this" />
 							</mp:selectOne>
 						</div>
 						<div class="col-xs-6">
 							<h:outputText value="Dynamic value: #{selectOneBean.valueDynamic}" />		
 						</div>
-					</div>
+					</p:outputPanel>
+					<p:outputPanel id="thirdRow" layout="block" styleClass="row">
+						<div class="col-xs-6">
+							<mp:selectOne nativeMode="true" value="#{selectOneBean.valueFixed}">
+								<f:selectItem itemLabel="Option 1" itemValue="1" />
+				           		<f:selectItem itemLabel="Option 2" itemValue="2" />
+								<p:ajax update="firstRow" process="@this" />
+							</mp:selectOne>
+						</div>
+						<div class="col-xs-6">
+							<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
+						</div>
+					</p:outputPanel>
 				</div>
 				<div class="tab-pane fade" id="page">
 					<pre>
