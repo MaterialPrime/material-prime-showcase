@@ -16,6 +16,7 @@ public class SelectOneBean implements Serializable{
 	
 	private Object valueFixed = "1";
 	private Object valueDynamic = "1";
+	private Object nativeMode = "1";
 	private List<SelectItem> list;
 	
 	public SelectOneBean() {
@@ -47,5 +48,13 @@ public class SelectOneBean implements Serializable{
 
 	public void setList(List<SelectItem> list) {
 		this.list = list;
+	}
+
+	public Object getNativeMode() {
+		return nativeMode;
+	}
+
+	public void setNativeMode(Object nativeMode) {
+		this.nativeMode = nativeMode;
 	}
 }

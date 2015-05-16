@@ -17,42 +17,39 @@
 			</div>
 			<div id="example" class="col s12">
 				<div class="row">
-					<div class="col s6">
+					<div class="col-xs-6">
 						<mp:selectOne value="#{selectOneBean.valueFixed}">
 							<f:selectItem itemLabel="Option 1" itemValue="1" />
 							<f:selectItem itemLabel="Option 2" itemValue="2" />
 							<p:ajax update="firstRow" process="@this" />
 						</mp:selectOne>
 					</div>
-					<div class="col s6">
-						<h:outputText id="firstRow"
-							value="Fixed value: #{selectOneBean.valueFixed}" />
+					<div class="col-xs-6">
+						<h:outputText id="firstRow" value="Fixed value: #{selectOneBean.valueFixed}" />
 					</div>
 				</div>
 				<div class="row">
-					<div class="col s6">
+					<div class="col-xs-6">
 						<mp:selectOne value="#{selectOneBean.valueDynamic}">
 							<f:selectItems value="#{selectOneBean.list}" />
 							<p:ajax update="secondRow" process="@this" />
 						</mp:selectOne>
 					</div>
-					<div class="col s6">
-						<h:outputText id="secondRow"
-							value="Dynamic value: #{selectOneBean.valueDynamic}" />
+					<div class="col-xs-6">
+						<h:outputText id="secondRow" value="Dynamic value: #{selectOneBean.valueDynamic}" />
 					</div>
 				</div>
 				<div class="row">
-					<div class="col s6">
+					<div class="col-xs-6">
 						<mp:selectOne nativeMode="true"
-							value="#{selectOneBean.valueFixed}">
+							value="#{selectOneBean.nativeMode}">
 							<f:selectItem itemLabel="Option 1" itemValue="1" />
 							<f:selectItem itemLabel="Option 2" itemValue="2" />
 							<p:ajax update="thirdRow" process="@this" />
 						</mp:selectOne>
 					</div>
-					<div class="col s6">
-						<h:outputText id="thirdRow"
-							value="Fixed value: #{selectOneBean.valueFixed}" />
+					<div class="col-xs-6">
+						<h:outputText id="thirdRow" value="Native mode: #{selectOneBean.nativeMode}" />
 					</div>
 				</div>
 			</div>
@@ -60,38 +57,39 @@
 				<pre>
 <code>
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
 		&lt;mp:selectOne value=&quot;#{selectOneBean.valueFixed}&quot;&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 1&quot; itemValue=&quot;1&quot; /&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 2&quot; itemValue=&quot;2&quot; /&gt;
 			&lt;p:ajax update=&quot;firstRow&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:selectOne&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
-		&lt;h:outputText id=&quot;firstRow&quot;value=&quot;Fixed value: #{selectOneBean.valueFixed}&quot; /&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText id=&quot;firstRow&quot; value=&quot;Fixed value: #{selectOneBean.valueFixed}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
 		&lt;mp:selectOne value=&quot;#{selectOneBean.valueDynamic}&quot;&gt;
 			&lt;f:selectItems value=&quot;#{selectOneBean.list}&quot; /&gt;
 			&lt;p:ajax update=&quot;secondRow&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:selectOne&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
-		&lt;h:outputText id=&quot;secondRow&quot;value=&quot;Dynamic value: #{selectOneBean.valueDynamic}&quot; /&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText id=&quot;secondRow&quot; value=&quot;Dynamic value: #{selectOneBean.valueDynamic}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
-		&lt;mp:selectOne nativeMode=&quot;true&quot;value=&quot;#{selectOneBean.valueFixed}&quot;&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;mp:selectOne nativeMode=&quot;true&quot;
+			value=&quot;#{selectOneBean.nativeMode}&quot;&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 1&quot; itemValue=&quot;1&quot; /&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 2&quot; itemValue=&quot;2&quot; /&gt;
 			&lt;p:ajax update=&quot;thirdRow&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:selectOne&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col s6&quot;&gt;
-		&lt;h:outputText id=&quot;thirdRow&quot;value=&quot;Fixed value: #{selectOneBean.valueFixed}&quot; /&gt;
+	&lt;div class=&quot;col-xs-6&quot;&gt;
+		&lt;h:outputText id=&quot;thirdRow&quot; value=&quot;Native mode: #{selectOneBean.nativeMode}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
@@ -118,6 +116,7 @@ public class SelectOneBean implements Serializable{
 	
 	private Object valueFixed = &quot;1&quot;;
 	private Object valueDynamic = &quot;1&quot;;
+	private Object nativeMode = &quot;1&quot;;
 	private List&lt;SelectItem&gt; list;
 	
 	public SelectOneBean() {
@@ -150,7 +149,16 @@ public class SelectOneBean implements Serializable{
 	public void setList(List&lt;SelectItem&gt; list) {
 		this.list = list;
 	}
+
+	public Object getNativeMode() {
+		return nativeMode;
+	}
+
+	public void setNativeMode(Object nativeMode) {
+		this.nativeMode = nativeMode;
+	}
 }
+
 
 </code>
 </pre>
