@@ -1,92 +1,111 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:mp="http://primefaces.org/ui/material"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/master.xhtml">
-    <ui:define name="page">
-       	<h1 class="text-center">SelectOne</h1>
-       	<div class="container">
-       		<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-				<li><a href="#example" data-toggle="tab">Example</a></li>
-				<li><a href="#page" data-toggle="tab">Page</a></li>
-				<li><a href="#bean" data-toggle="tab">Bean</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="example">
-					<p:outputPanel id="firstRow" layout="block" styleClass="row">
-						<div class="col-xs-6">
-							<mp:selectOne value="#{selectOneBean.valueFixed}">
-								<f:selectItem itemLabel="Option 1" itemValue="1" />
-				           		<f:selectItem itemLabel="Option 2" itemValue="2" />
-								<p:ajax update="firstRow" process="@this" />
-							</mp:selectOne>
-						</div>
-						<div class="col-xs-6">
-							<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
-						</div>
-					</p:outputPanel>
-					<p:outputPanel id="secondRow" layout="block" styleClass="row">
-						<div class="col-xs-6">
-							<mp:selectOne value="#{selectOneBean.valueDynamic}">
-								<f:selectItems value="#{selectOneBean.list}" />
-								<p:ajax update="secondRow" process="@this" />
-							</mp:selectOne>
-						</div>
-						<div class="col-xs-6">
-							<h:outputText value="Dynamic value: #{selectOneBean.valueDynamic}" />		
-						</div>
-					</p:outputPanel>
-					<p:outputPanel id="thirdRow" layout="block" styleClass="row">
-						<div class="col-xs-6">
-							<mp:selectOne nativeMode="true" value="#{selectOneBean.valueFixed}">
-								<f:selectItem itemLabel="Option 1" itemValue="1" />
-				           		<f:selectItem itemLabel="Option 2" itemValue="2" />
-								<p:ajax update="thirdRow" process="@this" />
-							</mp:selectOne>
-						</div>
-						<div class="col-xs-6">
-							<h:outputText value="Fixed value: #{selectOneBean.valueFixed}" />	
-						</div>
-					</p:outputPanel>
+	<ui:define name="page">
+		<h1 class="text-center">SelectOne</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Example</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<div class="row">
+					<div class="col s6">
+						<mp:selectOne value="#{selectOneBean.valueFixed}">
+							<f:selectItem itemLabel="Option 1" itemValue="1" />
+							<f:selectItem itemLabel="Option 2" itemValue="2" />
+							<p:ajax update="firstRow" process="@this" />
+						</mp:selectOne>
+					</div>
+					<div class="col s6">
+						<h:outputText id="firstRow"
+							value="Fixed value: #{selectOneBean.valueFixed}" />
+					</div>
 				</div>
-				<div class="tab-pane fade" id="page">
-					<pre>
-						<code>
+				<div class="row">
+					<div class="col s6">
+						<mp:selectOne value="#{selectOneBean.valueDynamic}">
+							<f:selectItems value="#{selectOneBean.list}" />
+							<p:ajax update="secondRow" process="@this" />
+						</mp:selectOne>
+					</div>
+					<div class="col s6">
+						<h:outputText id="secondRow"
+							value="Dynamic value: #{selectOneBean.valueDynamic}" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s6">
+						<mp:selectOne nativeMode="true"
+							value="#{selectOneBean.valueFixed}">
+							<f:selectItem itemLabel="Option 1" itemValue="1" />
+							<f:selectItem itemLabel="Option 2" itemValue="2" />
+							<p:ajax update="thirdRow" process="@this" />
+						</mp:selectOne>
+					</div>
+					<div class="col s6">
+						<h:outputText id="thirdRow"
+							value="Fixed value: #{selectOneBean.valueFixed}" />
+					</div>
+				</div>
+			</div>
+			<div id="page" class="col s12">
+				<pre>
+<code>
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;mp:selectOne value=&quot;#{'#{selectOneBean.valueFixed}'}&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;mp:selectOne value=&quot;#{selectOneBean.valueFixed}&quot;&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 1&quot; itemValue=&quot;1&quot; /&gt;
 			&lt;f:selectItem itemLabel=&quot;Option 2&quot; itemValue=&quot;2&quot; /&gt;
-			&lt;p:ajax update=&quot;@form&quot; process=&quot;@this&quot; /&gt;
+			&lt;p:ajax update=&quot;firstRow&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:selectOne&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText value=&quot;Fixed value: #{'#{selectOneBean.valueFixed}'}&quot; /&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;h:outputText id=&quot;firstRow&quot;value=&quot;Fixed value: #{selectOneBean.valueFixed}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot; style=&quot;margin-top:30px&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;mp:selectOne value=&quot;#{'#{selectOneBean.valueDynamic}'}&quot;&gt;
-			&lt;f:selectItems value=&quot;#{'#{selectOneBean.list}'}&quot; /&gt;
-			&lt;p:ajax update=&quot;@form&quot; process=&quot;@this&quot; /&gt;
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;mp:selectOne value=&quot;#{selectOneBean.valueDynamic}&quot;&gt;
+			&lt;f:selectItems value=&quot;#{selectOneBean.list}&quot; /&gt;
+			&lt;p:ajax update=&quot;secondRow&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:selectOne&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText value=&quot;Dynamic value: #{'#{selectOneBean.valueDynamic}'}&quot; /&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;h:outputText id=&quot;secondRow&quot;value=&quot;Dynamic value: #{selectOneBean.valueDynamic}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-						</code>
-					</pre>
-				</div>
-				<div class="tab-pane fade" id="bean">
+&lt;div class=&quot;row&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;mp:selectOne nativeMode=&quot;true&quot;value=&quot;#{selectOneBean.valueFixed}&quot;&gt;
+			&lt;f:selectItem itemLabel=&quot;Option 1&quot; itemValue=&quot;1&quot; /&gt;
+			&lt;f:selectItem itemLabel=&quot;Option 2&quot; itemValue=&quot;2&quot; /&gt;
+			&lt;p:ajax update=&quot;thirdRow&quot; process=&quot;@this&quot; /&gt;
+		&lt;/mp:selectOne&gt;
+	&lt;/div&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
+		&lt;h:outputText id=&quot;thirdRow&quot;value=&quot;Fixed value: #{selectOneBean.valueFixed}&quot; /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+			</div>
+			<div id="bean" class="col s12">
 				<pre>
-						<code>
+<code>
 package org.primefaces.material.showcase.components;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.faces.model.SelectItem;
@@ -96,7 +115,7 @@ import javax.faces.model.SelectItem;
 public class SelectOneBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
+	
 	private Object valueFixed = &quot;1&quot;;
 	private Object valueDynamic = &quot;1&quot;;
 	private List&lt;SelectItem&gt; list;
@@ -105,7 +124,7 @@ public class SelectOneBean implements Serializable{
 		list = new ArrayList&lt;SelectItem&gt;();
 		list.add(new SelectItem(&quot;1&quot;, &quot;Option 1&quot;));
 		list.add(new SelectItem(&quot;2&quot;, &quot;Option 2&quot;));
-		list.add(new SelectItem(&quot;3&quot;, &quot;Option 3&quot;));
+		list.add(new SelectItem(&quot;3&quot;, &quot;Option 3&quot;)); 
 	}
 	
 	public Object getValueFixed() {
@@ -123,20 +142,21 @@ public class SelectOneBean implements Serializable{
 	public void setValueDynamic(Object valueDynamic) {
 		this.valueDynamic = valueDynamic;
 	}
-	
+
 	public List&lt;SelectItem&gt; getList() {
 		return list;
 	}
-	
+
 	public void setList(List&lt;SelectItem&gt; list) {
 		this.list = list;
 	}
 }
-					</code>
-					</pre>
-				</div>
-			</div>					
-     	</div>
-    </ui:define>
+
+</code>
+</pre>
+			</div>
+		</div>
+
+	</ui:define>
 </ui:composition>
 </html>
