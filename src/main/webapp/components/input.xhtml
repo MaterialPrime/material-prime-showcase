@@ -7,207 +7,50 @@
 <ui:composition template="/master.xhtml">
 <ui:define name="page">
 		<h1 class="text-center">Input</h1>
-		<div class="container">
-			<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-				<li><a href="#example" data-toggle="tab">Example</a></li>
-				<li><a href="#page" data-toggle="tab">Page</a></li>
-				<li><a href="#bean" data-toggle="tab">Bean</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="example">
-					<div class="row">
-						<mp:input 
-							label="Floating Placeholder"/>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#example">Example</a></li>
+					<li class="tab col s6"><a href="#page">Page</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<div class="row">
+						<mp:input label="Floating Placeholder"/>
 					</div>
 					<div class="row">
 						<mp:input 
-							label="Normale Placeholder" 
+							label="Normal Placeholder"
 							placeholder="Write here!" 
 							floatingPlaceholder="false"/>
 					</div>
 					<div class="row">
 						<mp:input 
-							label="Hint" 
-							placeholder="Write here!" 
-							floatingPlaceholder="false"
-							hint="Write something cool bro!"/>
+							label="Disabled"
+							placeholder="Cannot Write here!"
+							disabled="true"/>
 					</div>
-					<div class="row">
-						<mp:input label="Large Input" height="large"/>
-					</div>
-					<div class="row">
-						<mp:input label="Default Input"/>
-					</div>
-					<div class="row">
-						<mp:input label="Small Input" height="small"/>
-					</div>
-					<div class="row">
-						<mp:input label="Addons" placeholder="Addons">
-							<f:facet name="preAddon">
-								<mp:icon name="mdi-image-edit"/>
-							</f:facet>
-						</mp:input>
-					</div>
-				</div>
-				<div class="tab-pane fade" id="page">
-<pre>
+			</div>
+			<div id="page" class="col s12">
+				<pre>
 <code>
-&lt;div class=&quot;row&quot;&gt;
-	&lt;p:outputPanel id=&quot;pnlTime&quot; layout=&quot;block&quot; class=&quot;col-xs-12&quot;&gt;
-		Click to update date: &lt;h:outputText value=&quot;#{'#{buttonBean.time}'}&quot;/&gt;
-	&lt;/p:outputPanel&gt;	
+&lt;div class="row"&gt;
+	&lt;mp:input label="Floating Placeholder"/&gt;
 &lt;/div&gt;
-&lt;h2&gt;Icons&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Left	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot;/&gt;	
-	&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;mp:input 
+		label="Normal Placeholder"
+		placeholder="Write here!" 
+		floatingPlaceholder="false"/&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Right	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot; iconPos=&quot;right&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		No Text	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot; iconPos=&quot;right&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Level&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Flat	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;flat&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Raised	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Size&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Large	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Small	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;small&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Mini	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;mini&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Look&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Primary	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Success	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;success&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Info	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;info&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Warning	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;warning&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Danger	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;danger&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;mp:input 
+		label="Disabled"
+		placeholder="Cannot Write here!"
+		disabled="true"/&gt;
 &lt;/div&gt;
 </code>
 </pre>
-				</div>
-				<div class="tab-pane fade" id="bean">
-<pre>
-<code>
-@ManagedBean
-public class ButtonBean implements Serializable{
-
-	private static final long serialVersionUID = 1L;
-	
-	public Date getTime(){
-		return new Date();
-	}
-
-}
-</code>
-</pre>
-				</div>
 			</div>
 		</div>
 	</ui:define>
