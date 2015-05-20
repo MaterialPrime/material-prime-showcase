@@ -1,235 +1,151 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:mp="http://primefaces.org/ui/material"
-      xmlns:p="http://primefaces.org/ui">
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/master.xhtml">
-<ui:define name="page">
+	<ui:define name="page">
 		<h1 class="text-center">Button</h1>
-		<div class="container">
-			<ul class="nav nav-tabs" style="margin-bottom: 15px;">
-				<li><a href="#example" data-toggle="tab">Example</a></li>
-				<li><a href="#page" data-toggle="tab">Page</a></li>
-				<li><a href="#bean" data-toggle="tab">Bean</a></li>
-			</ul>
-			<div class="tab-content">
-				<div class="tab-pane fade active in" id="example">
-					<div class="row">
-						<p:outputPanel id="pnlTime" layout="block" class="col-xs-12">
-							Click to update date: <h:outputText value="#{buttonBean.time}"/>
-						</p:outputPanel>	
-					</div>
-					<h2>Icons</h2>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Left	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" update="pnlTime" icon="mdi-action-accessibility"/>	
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Right	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" update="pnlTime" icon="mdi-action-accessibility" iconPos="right"/>	
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							No Text	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button size="large" level="raised" update="pnlTime" icon="mdi-action-accessibility" iconPos="right"/>	
-						</div>
-					</div>
-					<h2>Level</h2>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Flat	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" flat="true" update="pnlTime"/>	
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Raised	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" update="pnlTime"/>	
-						</div>
-					</div>
-					<h2>Size</h2>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Large	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" update="pnlTime"/>	
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							Default	
-						</div>
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" update="pnlTime"/>	
-						</div>
-					</div>
-					<h2>Disabled</h2>
-					<div class="row">
-						<div class="col-md-6 col-xs-12">
-							<mp:button value="Update" size="large" update="pnlTime" disabled="true"/>		
-						</div>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Example</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<div class="row">
+					<p:outputPanel id="pnlTime" layout="block" class="col s12 text-center">
+							Click to update date: <h:outputText value="#{buttonBean.time}" />
+					</p:outputPanel>
+				</div>
+				<h2>Icons</h2>
+				<div class="row">
+					<div class="col m6 s12">Left</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" update="pnlTime"
+							icon="mdi-action-accessibility" />
 					</div>
 				</div>
-				<div class="tab-pane fade" id="page">
-<pre>
+				<div class="row">
+					<div class="col m6 s12">Right</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" update="pnlTime"
+							icon="mdi-action-accessibility" iconPos="right" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m6 s12">No Text</div>
+					<div class="col m6 s12">
+						<mp:button size="large" level="raised" update="pnlTime"
+							icon="mdi-action-accessibility" iconPos="right" />
+					</div>
+				</div>
+				<h2>Level</h2>
+				<div class="row">
+					<div class="col m6 s12">Flat</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" flat="true"
+							update="pnlTime" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m6 s12">Raised</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" update="pnlTime" />
+					</div>
+				</div>
+				<h2>Size</h2>
+				<div class="row">
+					<div class="col m6 s12">Large</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" update="pnlTime" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col m6 s12">Default</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" update="pnlTime" />
+					</div>
+				</div>
+				<h2>Disabled</h2>
+				<div class="row">
+					<div class="col m6 s12">disabled</div>
+					<div class="col m6 s12">
+						<mp:button value="Update" size="large" update="pnlTime" disabled="true" />
+					</div>
+				</div>
+			</div>
+			<div id="page" class="col s12">
+				<pre>
 <code>
-&lt;div class=&quot;row&quot;&gt;
-	&lt;p:outputPanel id=&quot;pnlTime&quot; layout=&quot;block&quot; class=&quot;col-xs-12&quot;&gt;
-		Click to update date: &lt;h:outputText value=&quot;#{'#{buttonBean.time}'}&quot;/&gt;
-	&lt;/p:outputPanel&gt;	
+&lt;div class="row"&gt;
+	&lt;p:outputPanel id="pnlTime" layout="block" class="col s12 text-center"&gt;
+			Click to update date: &lt;h:outputText value="#{'#{buttonBean.time}'}" /&gt;
+	&lt;/p:outputPanel&gt;
 &lt;/div&gt;
 &lt;h2&gt;Icons&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Left	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Right	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot; iconPos=&quot;right&quot;/&gt;	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Left&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" update="pnlTime"
+			icon="mdi-action-accessibility" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		No Text	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Right&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" update="pnlTime"
+			icon="mdi-action-accessibility" iconPos="right" /&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot; icon=&quot;mdi-action-accessibility&quot; iconPos=&quot;right&quot;/&gt;	
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;No Text&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button size="large" level="raised" update="pnlTime"
+			icon="mdi-action-accessibility" iconPos="right" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Level&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Flat	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;flat&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Raised	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Flat&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" flat="true"
+			update="pnlTime" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; size=&quot;large&quot; update=&quot;pnlTime&quot;/&gt;	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Raised&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" update="pnlTime" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;h2&gt;Size&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Large	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;large&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Large&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" update="pnlTime" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;Default&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" update="pnlTime" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Small	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;small&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Mini	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; size=&quot;mini&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;h2&gt;Look&lt;/h2&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Default	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Primary	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;primary&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Success	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;success&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Info	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;info&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Warning	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;warning&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
-	&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		Danger	
-	&lt;/div&gt;
-	&lt;div class=&quot;col-md-6 col-xs-12&quot;&gt;
-		&lt;mp:button value=&quot;Update&quot; look=&quot;danger&quot; level=&quot;raised&quot; update=&quot;pnlTime&quot;/&gt;	
+&lt;h2&gt;Disabled&lt;/h2&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col m6 s12"&gt;disabled&lt;/div&gt;
+	&lt;div class="col m6 s12"&gt;
+		&lt;mp:button value="Update" size="large" update="pnlTime" disabled="true" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
 </pre>
-				</div>
-				<div class="tab-pane fade" id="bean">
-<pre>
+			</div>
+			<div id="bean" class="col s12">
+				<pre>
 <code>
 @ManagedBean
 public class ButtonBean implements Serializable{
@@ -243,7 +159,6 @@ public class ButtonBean implements Serializable{
 }
 </code>
 </pre>
-				</div>
 			</div>
 		</div>
 	</ui:define>
