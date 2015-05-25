@@ -45,25 +45,25 @@
 <code>
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;mp:radioButton value=&quot;#{radioButtonBean.valueFixed}&quot;&gt;
+		&lt;mp:radioButton value=&quot;#{'#{radioButtonBean.valueFixed}'}&quot;&gt;
 			&lt;f:selectItem itemLabel=&quot;Fixed Option 1&quot; itemValue=&quot;1&quot; /&gt;
            	&lt;f:selectItem itemLabel=&quot;Fixed Option 2&quot; itemValue=&quot;2&quot; /&gt;
 			&lt;p:ajax update=&quot;fixedValue&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:radioButton&gt;
 	&lt;/div&gt;
 	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText id=&quot;fixedValue&quot; value=&quot;Fixed value: #{radioButtonBean.valueFixed}&quot; /&gt;
+		&lt;h:outputText id=&quot;fixedValue&quot; value=&quot;Fixed value: #{'#{radioButtonBean.valueFixed}'}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;mp:radioButton withGap=&quot;true&quot; value=&quot;#{radioButtonBean.valueDynamic}&quot;&gt;
-			&lt;f:selectItems value=&quot;#{radioButtonBean.list}&quot; /&gt;
+		&lt;mp:radioButton withGap=&quot;true&quot; value=&quot;#{'#{radioButtonBean.valueDynamic}'}&quot;&gt;
+			&lt;f:selectItems value=&quot;#{'#{radioButtonBean.list}'}&quot; /&gt;
 			&lt;p:ajax update=&quot;dynamicValue&quot; process=&quot;@this&quot; /&gt;
 		&lt;/mp:radioButton&gt;
 	&lt;/div&gt;
 	&lt;div class=&quot;col-xs-6&quot;&gt;
-		&lt;h:outputText id=&quot;dynamicValue&quot; value=&quot;Dynamic value: #{radioButtonBean.valueDynamic}&quot; /&gt;
+		&lt;h:outputText id=&quot;dynamicValue&quot; value=&quot;Dynamic value: #{'#{radioButtonBean.valueDynamic}'}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
