@@ -25,6 +25,8 @@
 		
 		$(document).ready(function(){
 		    $('ul.tabs').tabs();
+		    $(".button-collapse").sideNav();
+		    $('.collapsible').collapsible();
 		});
 	</script>
 </h:head>
@@ -71,10 +73,11 @@
 				</ul>
 				<nav>
 				  <div class="nav-wrapper orange">
-				  	<h:outputLink class="right brand-logo" value="#{request.contextPath}/index.xhtml" >
+				  	<h:outputLink class="left brand-logo" value="#{request.contextPath}/index.xhtml" >
 						<i id="icon-prime" class="icon-prime"></i>
 					</h:outputLink>
-				    <ul class="left hide-on-med-and-down">
+					<a data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+					<ul class="right hide-on-med-and-down">
 				    	<li>
 				    		<a class="dropdown-button" href="#!" data-activates="dropdown1">
 				    			Components<i class="mdi-navigation-arrow-drop-down right"></i>
@@ -96,6 +99,69 @@
 							</a>
 				    	</li>
 				    </ul>
+				    <ul class="side-nav" id="mobile-menu">
+				        <li class="no-padding">
+				          <ul class="collapsible">
+				            <li class="text-bold">
+				            	<a class="collapsible-header  waves-effect waves-teal">Components</a>
+				              	<div class="collapsible-body" style="display: block;">
+				                <ul>
+				                	<li>
+			                   			<h:outputLink value="#{request.contextPath}/components/icon.xhtml" >
+										Icon
+										</h:outputLink>
+							  		</li>
+		                  			<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/toggle.xhtml" >
+										Toggle
+										</h:outputLink>
+			                    	</li>
+			                    	<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/checkbox.xhtml" >
+										Checkbox
+										</h:outputLink>
+			                    	</li>
+			                     	<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/selectOne.xhtml" >
+										SelectOne
+										</h:outputLink>
+			                    	</li>
+			                     	<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/radioButton.xhtml" >
+										RadioButton
+										</h:outputLink>
+									</li>
+			                    	<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/button.xhtml" >
+										Button
+										</h:outputLink>
+			                    	</li>
+			                    	<li>
+			                    		<h:outputLink value="#{request.contextPath}/components/input.xhtml" >
+										Input
+										</h:outputLink>
+			                    	</li>
+				          		</ul>
+				          		</div>
+				        	</li>
+				          </ul>
+				        </li>
+				        <li class="text-bold">
+				      		<h:outputLink value="#{request.contextPath}/setup.xhtml" >
+								Setup
+							</h:outputLink>
+				      	</li>
+				      	<li class="text-bold">
+                        	<h:outputLink value="#{request.contextPath}/team.xhtml" >
+								Team
+							</h:outputLink>
+				      	</li>
+				       	<li class="text-bold">
+                        	<a href="https://github.com/MaterialPrime" target="_blank">
+                           		GitHub
+							</a>
+				    	</li>
+			      	</ul>
 				  </div>
 				</nav>
 			</div>
