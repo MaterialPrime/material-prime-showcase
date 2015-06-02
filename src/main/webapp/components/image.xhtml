@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+<ui:define name="page">
+		<h1 class="text-center">Image</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#example">Result</a></li>
+					<li class="tab col s6"><a href="#page">Page</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<p>MaterialPrime images are automatically responsive, you can also use the "circle" attribute to make images appear circular. Just try to resize the screen!</p>
+				<div class="row">
+					<div class="col s4">
+						<mp:image circle="true" library="images" name="strazzullo.jpg" />
+					</div>
+					<div class="col s4">
+						<mp:image library="images" name="logo.png" />
+					</div>
+					<div class="col s4">
+						<mp:image circle="true" library="images" name="cardinali.png" />
+					</div>
+				</div>
+			</div>
+			<div id="page" class="col s12">
+				<pre>
+<code>
+&lt;p&gt;MaterialPrime images are automatically responsive, you can also use the "circle" attribute to make images appear circular. Just try to resize the screen!&lt;/p&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col s4"&gt;
+		&lt;mp:image circle="true" library="images" name="strazzullo.jpg" /&gt;
+	&lt;/div&gt;
+	&lt;div class="col s4"&gt;
+		&lt;mp:image library="images" name="logo.png" /&gt;
+	&lt;/div&gt;
+	&lt;div class="col s4"&gt;
+		&lt;mp:image circle="true" library="images" name="cardinali.png" /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
