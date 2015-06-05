@@ -2,6 +2,7 @@
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:f="http://java.sun.com/jsf/core"
 	xmlns:p="http://primefaces.org/ui">
 <ui:composition template="/master.xhtml">
 	<ui:define name="page">
@@ -18,15 +19,34 @@
 				<p class="text-center">With MaterialPrime you can easily a Toast to notify something to the users</p>
 				<hr/>
 				<div class="row">
-					<div class="col m3 s6">Server</div>
-					<div class="col m3 s6">
-						<mp:button action="#{toastBean.showToast}" value="Show Toast" size="large" />
+					<div class="col m4 s12">
+						<mp:button 
+							action="#{toastBean.showToast}" 
+							value="Show Server Toast" 
+							size="large" />
 					</div>
-					<div class="col m3 s6">Client</div>
-					<div class="col m3 s6">
-						<mp:button type="button" onclick="MaterialPrime.toast('Hi From the client',1000,true);" value="Show Toast" size="large" />
+					<div class="col m4 s12">
+						<mp:button 
+							type="button" 
+							onclick="MaterialPrime.toast('Hi From the client',1000,true);" 
+							value="Show Client Toast" 
+							size="large" />
+					</div>
+					<div class="col m4 s12">
+						<mp:button 
+							type="button" 
+							onclick="PF('customToast').show(5000);" 
+							value="Show Custom Toast" 
+							size="large" />
 					</div>
 				</div>
+				<mp:toast widgetVar="customToast">
+					<f:facet name="content">
+						<h:outputText value="This is a Custom Toast!"/>
+						<br/>
+						<a onclick="MaterialPrime.toast('Another Client Toast!',1000,true);">Click Me!</a>
+					</f:facet>
+				</mp:toast>
 			</div>
 			<div id="page" class="col s12">
 				<pre>
@@ -34,17 +54,34 @@
 &lt;p class="text-center"&gt;With MaterialPrime you can easily a Toast to notify something to the users&lt;/p&gt;
 &lt;hr/&gt;
 &lt;div class="row"&gt;
-	&lt;div class="col m3 s6"&gt;Server&lt;/div&gt;
-	&lt;div class="col m3 s6"&gt;
-		&lt;mp:button action="#{'#{toastBean.showToast}'}" value="Show Toast" size="large" /&gt;
+	&lt;div class="col m4 s12"&gt;
+		&lt;mp:button 
+			action="#{'#{toastBean.showToast}'}" 
+			value="Show Server Toast" 
+			size="large" /&gt;
 	&lt;/div&gt;
-	&lt;div class="col m3 s6"&gt;Client&lt;/div&gt;
-	&lt;div class="col m3 s6"&gt;
-		&lt;mp:button type="button" 
+	&lt;div class="col m4 s12"&gt;
+		&lt;mp:button 
+			type="button" 
 			onclick="MaterialPrime.toast('Hi From the client',1000,true);" 
-			value="Show Toast" size="large" /&gt;
+			value="Show Client Toast" 
+			size="large" /&gt;
+	&lt;/div&gt;
+	&lt;div class="col m4 s12"&gt;
+		&lt;mp:button 
+			type="button" 
+			onclick="PF('customToast').show(5000);" 
+			value="Show Custom Toast" 
+			size="large" /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
+&lt;mp:toast widgetVar="customToast"&gt;
+	&lt;f:facet name="content"&gt;
+		&lt;h:outputText value="This is a Custom Toast!"/&gt;
+		&lt;br/&gt;
+		&lt;a onclick="MaterialPrime.toast('Another Client Toast!',1000,true);"&gt;Click Me!&lt;/a&gt;
+	&lt;/f:facet&gt;
+&lt;/mp:toast&gt;
 </code>
 </pre>
 			</div>
