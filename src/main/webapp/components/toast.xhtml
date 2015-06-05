@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+	<ui:define name="page">
+		<h1 class="text-center">Toast</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Result</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<p class="text-center">With MaterialPrime you can easily a Toast to notify something to the users</p>
+				<hr/>
+				<div class="row">
+					<div class="col m3 s6">Server</div>
+					<div class="col m3 s6">
+						<mp:button action="#{toastBean.showToast}" value="Show Toast" size="large" />
+					</div>
+					<div class="col m3 s6">Client</div>
+					<div class="col m3 s6">
+						<mp:button type="button" onclick="MaterialPrime.toast('Hi From the client',1000,true);" value="Show Toast" size="large" />
+					</div>
+				</div>
+			</div>
+			<div id="page" class="col s12">
+				<pre>
+<code>
+&lt;p class="text-center"&gt;With MaterialPrime you can easily a Toast to notify something to the users&lt;/p&gt;
+&lt;hr/&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col m3 s6"&gt;Server&lt;/div&gt;
+	&lt;div class="col m3 s6"&gt;
+		&lt;mp:button action="#{'#{toastBean.showToast}'}" value="Show Toast" size="large" /&gt;
+	&lt;/div&gt;
+	&lt;div class="col m3 s6"&gt;Client&lt;/div&gt;
+	&lt;div class="col m3 s6"&gt;
+		&lt;mp:button type="button" 
+			onclick="MaterialPrime.toast('Hi From the client',1000,true);" 
+			value="Show Toast" size="large" /&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
+</code>
+</pre>
+			</div>
+			<div id="bean" class="col s12">
+				<pre>
+<code>
+@ManagedBean
+@NoneScoped
+public class ToastBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	public void showToast(){
+		ToastService.getInstance().newToast("Hi From the server!");
+	}
+
+}
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
