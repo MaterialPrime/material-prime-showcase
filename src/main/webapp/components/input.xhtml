@@ -16,38 +16,58 @@
 			</div>
 			<div id="example" class="col s12">
 				<div class="row">
-						<mp:input label="Floating Placeholder"/>
-					</div>
-					<div class="row">
-						<mp:input 
-							label="Normal Placeholder"
-							placeholder="Write here!" 
-							floatingPlaceholder="false"/>
-					</div>
-					<div class="row">
-						<mp:input 
-							label="Disabled"
-							placeholder="Cannot Write here!"
-							disabled="true"/>
-					</div>
+					<h3>Standard Placheholder</h3>
+					<mp:input 
+						label="Normal Placeholder"
+						placeholder="Write here!" 
+						floatingPlaceholder="false"/>
+				</div>
+				<div class="row">
+					<h3>Floating Placeholder</h3>
+					<mp:input label="I will float!"/>
+				</div>
+				<div class="row">
+					<h3>Disabled</h3>
+					<mp:input 
+						label="Disabled"
+						placeholder="Cannot Write here!"
+						disabled="true"/>
+				</div>
+				<div class="row">
+					<h3>Character Counter</h3>
+					<mp:input 
+						label="Maxlength 20 characters"
+						maxlength="20"
+						showCounter="true"/>
+				</div>
 			</div>
 			<div id="page" class="col s12">
 				<pre>
 <code>
 &lt;div class="row"&gt;
-	&lt;mp:input label="Floating Placeholder"/&gt;
-&lt;/div&gt;
-&lt;div class="row"&gt;
+	&lt;h3&gt;Standard Placheholder&lt;/h3&gt;
 	&lt;mp:input 
 		label="Normal Placeholder"
 		placeholder="Write here!" 
 		floatingPlaceholder="false"/&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
+	&lt;h3&gt;Floating Placeholder&lt;/h3&gt;
+	&lt;mp:input label="I will float!"/&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;h3&gt;Disabled&lt;/h3&gt;
 	&lt;mp:input 
 		label="Disabled"
 		placeholder="Cannot Write here!"
 		disabled="true"/&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;h3&gt;Character Counter&lt;/h3&gt;
+	&lt;mp:input 
+		label="Maxlength 20 characters"
+		maxlength="20"
+		showCounter="true"/&gt;
 &lt;/div&gt;
 </code>
 </pre>
