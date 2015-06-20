@@ -1,0 +1,58 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+<ui:define name="page">
+		<h1 class="text-center">DatePicker</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#example">Result</a></li>
+					<li class="tab col s6"><a href="#page">Page</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<div class="row">
+					<h:outputText value="Default: " />
+					<mp:datePicker id="default" />													
+				</div>	
+				<div class="row">
+					<h:outputText value="Italian translation: " />
+					<mp:datePicker id="italian" pattern="dd/mm/yyyy" today="oggi" close="chiudi" clear="pulisci"
+						labelMonthNext="Mese Successivo" labelMonthPrev="Mese Precedente" labelYearSelect="Seleziona Anno" labelMonthSelect="Seleziona Mese"/>						
+				</div>	 
+				<div class="row">
+					<h:outputText value="Limited: " />
+					<mp:datePicker id="limited1" min="-10" max="1" />
+					<mp:datePicker id="limited2" selectYears="2" />						
+				</div>							
+			</div>
+			
+			<div id="page" class="col s12">
+				<pre>
+<code>
+&lt;div class=&quot;row&quot;&gt;
+	&lt;h:outputText value=&quot;Default: &quot; /&gt;
+	&lt;mp:datePicker id=&quot;default&quot; /&gt;													
+&lt;/div&gt;	
+&lt;div class=&quot;row&quot;&gt;
+	&lt;h:outputText value=&quot;Italian translation: &quot; /&gt;
+	&lt;mp:datePicker id=&quot;italian&quot; pattern=&quot;dd/mm/yyyy&quot; today=&quot;oggi&quot; close=&quot;chiudi&quot; clear=&quot;pulisci&quot;
+		labelMonthNext=&quot;Mese Successivo&quot; labelMonthPrev=&quot;Mese Precedente&quot; 
+		labelYearSelect=&quot;Seleziona Anno&quot; labelMonthSelect=&quot;Seleziona Mese&quot;/&gt;						
+&lt;/div&gt;	 
+&lt;div class=&quot;row&quot;&gt;
+	&lt;h:outputText value=&quot;Limited: &quot; /&gt;
+	&lt;mp:datePicker id=&quot;limited1&quot; min=&quot;-10&quot; max=&quot;1&quot; /&gt;
+	&lt;mp:datePicker id=&quot;limited2&quot; selectYears=&quot;2&quot; /&gt;						
+&lt;/div&gt;			
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
