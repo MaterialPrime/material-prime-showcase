@@ -16,24 +16,24 @@
 			</div>
 			<div id="example" class="col s12">
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col s6">
 						<mp:checkbox value="#{checkboxBean.bluetooth}"
 							itemLabel="Bluetooth">
 							<p:ajax update="bluetoothStatus" />
 						</mp:checkbox>
 					</div>
-					<div class="col-xs-6">
+					<div class="col s6">
 						<h:outputText id="bluetoothStatus"
 							value="#{checkboxBean.bluetooth ? 'active' : 'inactive'}" />
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-xs-6">
+					<div class="col s6">
 						<mp:checkbox value="#{checkboxBean.wifi}" itemLabel="Wi-fi">
 							<p:ajax update="wifiStatus" />
 						</mp:checkbox>
 					</div>
-					<div class="col-xs-6">
+					<div class="col s6">
 						<h:outputText id="wifiStatus"
 							value="#{checkboxBean.wifi ? 'active' : 'inactive'}" />
 					</div>
@@ -43,24 +43,24 @@
 <pre>
 <code>
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
 		&lt;mp:checkbox value=&quot;#{'#{checkboxBean.bluetooth}'}&quot;
 			itemLabel=&quot;Bluetooth&quot;&gt;
 			&lt;p:ajax update=&quot;bluetoothStatus&quot; /&gt;
 		&lt;/mp:checkbox&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
 		&lt;h:outputText id=&quot;bluetoothStatus&quot;
 			value=&quot;#{'#{checkboxBean.bluetooth ? \'active\' : \'inactive\'}'}&quot; /&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
 		&lt;mp:checkbox value=&quot;#{'#{checkboxBean.wifi}'}&quot; itemLabel=&quot;Wi-fi&quot;&gt;
 			&lt;p:ajax update=&quot;wifiStatus&quot; /&gt;
 		&lt;/mp:checkbox&gt;
 	&lt;/div&gt;
-	&lt;div class=&quot;col-xs-6&quot;&gt;
+	&lt;div class=&quot;col s6&quot;&gt;
 		&lt;h:outputText id=&quot;wifiStatus&quot;
 			value=&quot;#{'#{checkboxBean.wifi ? \'active\' : \'inactive\'}'}&quot; /&gt;
 	&lt;/div&gt;
