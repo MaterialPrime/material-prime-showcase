@@ -16,9 +16,9 @@
 	<dependencies>
 		<!-- MaterialPrime -->
 		<dependency>
-		    <groupId>com.github.MaterialPrime</groupId>
-		    <artifactId>material-prime</artifactId>
-		    <version>v0.0.1</version>
+			<groupId>org.primefaces.material</groupId>
+			<artifactId>material-prime</artifactId>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 		<!-- PrimeFaces -->
 		<dependency>
