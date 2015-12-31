@@ -108,7 +108,7 @@
 				</ul>
 				<nav>
 				  <div class="nav-wrapper orange">
-				  	<h:outputLink class="left brand-logo" value="#{request.contextPath}/index.xhtml" >
+				  	<h:outputLink class="brand-logo" value="#{request.contextPath}/index.xhtml" >
 						<i id="icon-prime" class="icon-prime"></i>
 					</h:outputLink>
 					<a data-activates="mobile-menu" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
@@ -139,10 +139,10 @@
 				    </ul>
 				    <ul class="side-nav" id="mobile-menu">
 				        <li class="no-padding">
-				          <ul class="collapsible">
+				          <ul class="collapsible collapsible-accordion">
 				            <li class="text-bold">
 				            	<a class="collapsible-header  waves-effect waves-teal">Components</a>
-				              	<div class="collapsible-body" style="display: block;">
+				              	<div class="collapsible-body">
 				                <ul>
 				                	<li>
 			                   			<h:outputLink value="#{request.contextPath}/components/icon.xhtml" >
