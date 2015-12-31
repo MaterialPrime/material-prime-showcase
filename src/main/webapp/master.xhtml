@@ -36,7 +36,6 @@
 		$(document).ready(function(){
 		    $('ul.tabs').tabs();
 		    $(".button-collapse").sideNav();
-		    $('.collapsible').collapsible();
 		});
 	</script>
 </h:head>
@@ -139,7 +138,7 @@
 				    </ul>
 				    <ul class="side-nav" id="mobile-menu">
 				        <li class="no-padding">
-				          <ul class="collapsible collapsible-accordion">
+				          <ul class="collapsible" data-collapsible="accordion">
 				            <li class="text-bold">
 				            	<a class="collapsible-header  waves-effect waves-teal">Components</a>
 				              	<div class="collapsible-body">
