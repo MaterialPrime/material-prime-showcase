@@ -33,22 +33,13 @@
        	</div>
        	<h3 class="text-center">Bleeding Edge</h3>
        	<div class="jumbotron">
-		   If you want the last unstable version of MaterialPrime, you need to build it yourself with <strong>Maven</strong> and <strong>git</strong>. Open a terminal and just enter this command:
-<pre>
-<code>
-git clone https://github.com/MaterialPrime/material-prime.git
-cd material-prime
-mvn install
-</code>
-</pre>
-			Now you can use the last version of MaterialPrime adding the dependency to the pom.xml file.
-			
+		   If you want the last unstable version of MaterialPrime, you need to change the dependency like this:
 <pre>
 <code>
 &lt;dependency&gt;
-	&lt;groupId&gt;org.primefaces.material&lt;/groupId&gt;
-	&lt;artifactId&gt;material-prime&lt;/artifactId&gt;
-	&lt;version&gt;0.0.2-SNAPSHOT&lt;/version&gt;
+    &lt;groupId&gt;com.github.MaterialPrime&lt;/groupId&gt;
+    &lt;artifactId&gt;material-prime&lt;/artifactId&gt;
+    &lt;version&gt;develop-SNAPSHOT&lt;/version&gt;
 &lt;/dependency&gt;
 </code>
 </pre>		

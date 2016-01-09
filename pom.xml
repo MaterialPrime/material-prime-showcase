@@ -15,10 +15,17 @@
 	</repositories>
 	<dependencies>
 		<!-- MaterialPrime -->
+		<!-- LOCAL DEVELOPMENT 
 		<dependency>
 			<groupId>org.primefaces.material</groupId>
 			<artifactId>material-prime</artifactId>
 			<version>0.0.2-SNAPSHOT</version>
+		</dependency>
+		 -->
+		<dependency>
+		    <groupId>com.github.MaterialPrime</groupId>
+		    <artifactId>material-prime</artifactId>
+		    <version>develop-SNAPSHOT</version>
 		</dependency>
 		<!-- PrimeFaces -->
 		<dependency>
