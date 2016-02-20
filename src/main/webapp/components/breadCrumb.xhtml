@@ -1,0 +1,84 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+	<ui:define name="page">
+		<h1 class="text-center">BreadCrumb</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Result</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<h2>Static Items</h2>
+				<mp:breadCrumb>
+				    <p:menuitem value="Home" url="#" />
+				    <p:menuitem value="Sports" url="#" />
+				    <p:menuitem value="Basketball" url="#" />
+				    <p:menuitem value="NBA" url="#" />
+				    <p:menuitem value="Teams" url="#" />
+				    <p:menuitem value="L.A. Lakers" url="#" />
+				    <p:menuitem value="Roster" url="#" />
+				    <p:menuitem value="Kobe Bryant" url="#" />
+				</mp:breadCrumb>
+				<h2>Dynamic Menus</h2>
+				<mp:breadCrumb model="#{breadCrumbBean.menuModel}">
+				</mp:breadCrumb>
+			</div>
+			<div id="page" class="col s12">
+<pre>
+<code>
+&lt;h2&gt;Static Items&lt;/h2&gt;
+&lt;mp:breadCrumb&gt;
+    &lt;p:menuitem value=&quot;Home&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;Sports&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;Basketball&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;NBA&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;Teams&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;L.A. Lakers&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;Roster&quot; url=&quot;#&quot; /&gt;
+    &lt;p:menuitem value=&quot;Kobe Bryant&quot; url=&quot;#&quot; /&gt;
+&lt;/mp:breadCrumb&gt;
+&lt;h2&gt;Dynamic Menus&lt;/h2&gt;
+&lt;mp:breadCrumb model=&quot;#{'#{breadCrumbBean.menuModel}'}&quot;&gt;
+&lt;/mp:breadCrumb&gt;
+</code>
+</pre>
+			</div>
+			<div id="bean" class="col s12">
+<pre>
+<code>
+@ManagedBean
+public class BreadCrumbBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	
+	private MenuModel menuModel;
+	
+	public BreadCrumbBean() {
+		menuModel = new DefaultMenuModel();
+		
+		for (int i = 0; i &lt; 6; i++) {
+			DefaultMenuItem item = new DefaultMenuItem(&quot;Element &quot; + (i + 1));
+			menuModel.addElement(item);
+		}
+		
+	}
+
+	public MenuModel getMenuModel() {
+		return menuModel;
+	}
+
+}
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
