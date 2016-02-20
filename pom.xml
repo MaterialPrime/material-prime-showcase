@@ -25,7 +25,7 @@
 		<dependency>
 		    <groupId>com.github.MaterialPrime</groupId>
 		    <artifactId>material-prime</artifactId>
-		    <version>develop-SNAPSHOT</version>
+		    <version>aa9148fd7f3d2b3ad6136963187851229e16f488</version>
 		</dependency>
 		<!-- PrimeFaces -->
 		<dependency>
