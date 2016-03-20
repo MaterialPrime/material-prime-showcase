@@ -94,7 +94,7 @@
 				<dependency>
 				    <groupId>com.github.MaterialPrime</groupId>
 				    <artifactId>material-prime</artifactId>
-				    <version>be76f87cdf25fe2ea4c011366f0f9e5a1ecaabd2</version>
+				    <version>c5d42780973a3772a723d9771060aa6c7e20f6bc</version>
 				</dependency>
 			</dependencies>
 			<build>
