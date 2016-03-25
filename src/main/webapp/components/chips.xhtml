@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:mp="http://primefaces.org/ui/material"
+      xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+<ui:define name="page">
+		<h1 class="text-center">Chips</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s6"><a href="#example">Result</a></li>
+					<li class="tab col s6"><a href="#page">Page</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">				
+				<div class="row">
+					<h3>Contacts</h3>
+					<mp:chips label="Mario Rossi" url="../resources/images/user.png" />
+				</div>
+				<div class="row">
+					<h3>Tag without image</h3>
+					<mp:chips closable="true" label="Tag" />
+				</div>	
+				<div class="row">
+					<h3>Tag with image</h3>
+					<mp:chips closable="true" label="Tag with img" url="../resources/images/user.png" />
+				</div>				
+			</div>
+			<div id="page" class="col s12">
+				<pre>
+<code>
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+&#x9;&#x3C;h3&#x3E;Contacts&#x3C;/h3&#x3E;
+&#x9;&#x3C;mp:chips label=&#x22;Mario Rossi&#x22; url=&#x22;../resources/images/user.png&#x22; /&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+&#x9;&#x3C;h3&#x3E;Tag without image&#x3C;/h3&#x3E;
+&#x9;&#x3C;mp:chips closable=&#x22;true&#x22; label=&#x22;Tag&#x22; /&#x3E;
+&#x3C;/div&#x3E;&#x9;
+&#x3C;div class=&#x22;row&#x22;&#x3E;
+&#x9;&#x3C;h3&#x3E;Tag with image&#x3C;/h3&#x3E;
+&#x9;&#x3C;mp:chips closable=&#x22;true&#x22; label=&#x22;Tag with img&#x22; url=&#x22;../resources/images/user.png&#x22; /&#x3E;
+&#x3C;/div&#x3E;&#x9;&#x9;
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
