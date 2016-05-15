@@ -1,0 +1,53 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:mp="http://primefaces.org/ui/material"
+	xmlns:p="http://primefaces.org/ui">
+<ui:composition template="/master.xhtml">
+	<ui:define name="page">
+		<h1 class="text-center">BreadCrumb</h1>
+		<div class="row">
+			<div class="col s12">
+				<ul class="tabs">
+					<li class="tab col s3"><a href="#example">Result</a></li>
+					<li class="tab col s3"><a href="#page">Page</a></li>
+					<li class="tab col s3"><a href="#bean">Bean</a></li>
+				</ul>
+			</div>
+			<div id="example" class="col s12">
+				<h2>Determinate</h2>
+				<mp:progressBar value="#{progressBarBean.value}"/>
+				<h2>Indeterminate</h2>
+				<mp:progressBar />
+			</div>
+			<div id="page" class="col s12">
+<pre>
+<code>
+&lt;h2&gt;Determinate&lt;/h2&gt;
+&lt;mp:progressBar value=&quot;#{'#{progressBarBean.value}'}&quot;/&gt;
+&lt;h2&gt;Indeterminate&lt;/h2&gt;
+&lt;mp:progressBar /&gt;
+</code>
+</pre>
+			</div>
+			<div id="bean" class="col s12">
+<pre>
+<code>
+@ManagedBean
+public class ProgressBarBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+	private Random random = new Random();
+
+	public Integer getValue(){
+	    return random.nextInt(101);
+	};
+
+}
+</code>
+</pre>
+			</div>
+		</div>
+	</ui:define>
+</ui:composition>
+</html>
