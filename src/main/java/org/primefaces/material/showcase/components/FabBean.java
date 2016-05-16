@@ -9,7 +9,7 @@ public class FabBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String firstIcon = "mdi-action-favorite";
+	private String firstIcon = "android";
 
 	public String getFirstIcon() {
 		return firstIcon;

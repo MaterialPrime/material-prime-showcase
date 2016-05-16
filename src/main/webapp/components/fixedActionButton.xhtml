@@ -20,10 +20,10 @@
 						<p>
 							A Fixed Action Button it's positioned in the bottom righthand corner of the page and should contain a set of actions that will appear on hover. Use it to change the icon in the center.
 						</p>
-						<mp:fab icon="mdi-editor-mode-edit">
-							<mp:fabItem icon="mdi-action-favorite" update="pnlFirstIcon" action="#{fabBean.setFirstIcon('mdi-action-favorite')}"/>
-							<mp:fabItem icon="mdi-action-info" update="pnlFirstIcon"  action="#{fabBean.setFirstIcon('mdi-action-info')}"/>
-							<mp:fabItem icon="mdi-action-lock-open" update="pnlFirstIcon" action="#{fabBean.setFirstIcon('mdi-action-lock-open')}"/>
+						<mp:fab icon="mode_edit">
+							<mp:fabItem icon="android" update="pnlFirstIcon" action="#{fabBean.setFirstIcon('android')}"/>
+							<mp:fabItem icon="info" update="pnlFirstIcon"  action="#{fabBean.setFirstIcon('info')}"/>
+							<mp:fabItem icon="lock_open" update="pnlFirstIcon" action="#{fabBean.setFirstIcon('lock_open')}"/>
 						</mp:fab>
 						<p:outputPanel layout="block" id="pnlFirstIcon" styleClass="text-center">
 							<mp:icon size="large" name="#{fabBean.firstIcon}"/>
@@ -35,11 +35,11 @@
 						<h2>Horizontal</h2>
 						<p>You can also choose to display the items horizontaly. The items will show on the left of the button.</p>
 						<div style="position: relative;">
-         					<mp:fab color="blue" icon="mdi-action-info" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
-								<mp:fabItem icon="mdi-action-favorite"/>
-								<mp:fabItem icon="mdi-action-android"/>
-								<mp:fabItem icon="mdi-action-description"/>
-								<mp:fabItem icon="mdi-action-face-unlock"/>
+         					<mp:fab color="blue" icon="info" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
+								<mp:fabItem icon="turned_in_not"/>
+								<mp:fabItem icon="android"/>
+								<mp:fabItem icon="description"/>
+								<mp:fabItem icon="lock_open"/>
 							</mp:fab>
         				</div>
 					</div>
@@ -49,11 +49,11 @@
 						<h2>Colors</h2>
 						<p>You can choose the color of the button and for every item. The colors of the items, if not specified, it's random.</p>
 						<div style="position: relative;">
-         					<mp:fab color="green" icon="mdi-action-search" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
-								<mp:fabItem color="green" icon="mdi-action-favorite"/>
-								<mp:fabItem color="green" icon="mdi-action-android"/>
-								<mp:fabItem color="green" icon="mdi-action-description"/>
-								<mp:fabItem color="green" icon="mdi-action-face-unlock"/>
+         					<mp:fab color="green" icon="search" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
+         						<mp:fabItem color="green" icon="turned_in_not"/>
+								<mp:fabItem color="green" icon="android"/>
+								<mp:fabItem color="green" icon="description"/>
+								<mp:fabItem color="green" icon="lock_open"/>
 							</mp:fab>
         				</div>
 					</div>
@@ -63,11 +63,11 @@
 						<h2>Click to toogle</h2>
 						<p>By default the items show on hover. You can force the user to click on the button open the FAB.</p>
 						<div style="position: relative;">
-         					<mp:fab clickToToggle="true" color="deep-orange" icon="mdi-action-list" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
-								<mp:fabItem icon="mdi-action-favorite"/>
-								<mp:fabItem icon="mdi-action-android"/>
-								<mp:fabItem icon="mdi-action-description"/>
-								<mp:fabItem icon="mdi-action-face-unlock"/>
+         					<mp:fab clickToToggle="true" color="deep-orange" icon="list" style="position: absolute; display: inline-block; top: 0; right: 50px;" horizontal="true">
+								<mp:fabItem icon="turned_in_not"/>
+								<mp:fabItem icon="android"/>
+								<mp:fabItem icon="description"/>
+								<mp:fabItem icon="lock_open"/>
 							</mp:fab>
         				</div>
 					</div>
@@ -79,102 +79,58 @@
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col s12&quot;&gt;
 		&lt;p&gt;
-			A Fixed Action Button it's positioned in the bottom righthand corner of the page 
-			and should contain a set of actions that will appear on hover. 
-			Use it to change the icon in the center.
+			A Fixed Action Button it's positioned in the bottom righthand corner of the page and should contain a set of actions that will appear on hover. Use it to change the icon in the center.
 		&lt;/p&gt;
-		&lt;mp:fab icon=&quot;mdi-editor-mode-edit&quot;&gt;
-			&lt;mp:fabItem 
-				icon=&quot;mdi-action-favorite&quot; 
-				update=&quot;pnlFirstIcon&quot; 
-				action=&quot;#{'#{fabBean.setFirstIcon(\'mdi-action-favorite\')}'}&quot;/&gt;
-			&lt;mp:fabItem 
-				icon=&quot;mdi-action-info&quot; 
-				update=&quot;pnlFirstIcon&quot;  
-				action=&quot;#{'#{fabBean.setFirstIcon(\'mdi-action-info\')}'}&quot;/&gt;
-			&lt;mp:fabItem 
-				icon=&quot;mdi-action-lock-open&quot; 
-				update=&quot;pnlFirstIcon&quot; 
-				action=&quot;#{'#{fabBean.setFirstIcon(\'mdi-action-lock-open\')}'}&quot;/&gt;
+		&lt;mp:fab icon=&quot;mode_edit&quot;&gt;
+			&lt;mp:fabItem icon=&quot;android&quot; update=&quot;pnlFirstIcon&quot; action=&quot;#{'#{fabBean.setFirstIcon(\"android\")}'}&quot;/&gt;
+			&lt;mp:fabItem icon=&quot;info&quot; update=&quot;pnlFirstIcon&quot;  action=&quot;#{'#{fabBean.setFirstIcon(\"info\")}'}&quot;/&gt;
+			&lt;mp:fabItem icon=&quot;lock_open&quot; update=&quot;pnlFirstIcon&quot; action=&quot;#{'#{fabBean.setFirstIcon(\"lock_open\")}'}&quot;/&gt;
 		&lt;/mp:fab&gt;
-		&lt;p:outputPanel 
-			layout=&quot;block&quot; 
-			id=&quot;pnlFirstIcon&quot; 
-			styleClass=&quot;text-center&quot;&gt;
-				&lt;mp:icon size=&quot;large&quot; name=&quot;#{'#{fabBean.firstIcon}'}&quot;/&gt;
+		&lt;p:outputPanel layout=&quot;block&quot; id=&quot;pnlFirstIcon&quot; styleClass=&quot;text-center&quot;&gt;
+			&lt;mp:icon size=&quot;large&quot; name=&quot;#{'#{fabBean.firstIcon}'}&quot;/&gt;
 		&lt;/p:outputPanel&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col s12&quot;&gt;
 		&lt;h2&gt;Horizontal&lt;/h2&gt;
-		&lt;p&gt;
-			You can also choose to display the items horizontaly.
-		 	The items will show on the left of the button.
-		&lt;/p&gt;
+		&lt;p&gt;You can also choose to display the items horizontaly. The items will show on the left of the button.&lt;/p&gt;
 		&lt;div style=&quot;position: relative;&quot;&gt;
- 			&lt;mp:fab 
- 				color=&quot;blue&quot; 
- 				icon=&quot;mdi-action-info&quot; 
- 				style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; 
- 				horizontal=&quot;true&quot;&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-favorite&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-android&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-description&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-face-unlock&quot;/&gt;
+			&lt;mp:fab color=&quot;blue&quot; icon=&quot;info&quot; style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; horizontal=&quot;true&quot;&gt;
+				&lt;mp:fabItem icon=&quot;turned_in_not&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;android&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;description&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;lock_open&quot;/&gt;
 			&lt;/mp:fab&gt;
-		&lt;/div&gt;
+    				&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col s12&quot;&gt;
 		&lt;h2&gt;Colors&lt;/h2&gt;
-		&lt;p&gt;
-			You can choose the color of the button and for every item. 
-			The colors of the items, if not specified, it's random.
-		&lt;/p&gt;
+		&lt;p&gt;You can choose the color of the button and for every item. The colors of the items, if not specified, it's random.&lt;/p&gt;
 		&lt;div style=&quot;position: relative;&quot;&gt;
-			&lt;mp:fab 
-				color=&quot;green&quot; 
-				icon=&quot;mdi-action-search&quot; 
-				style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; 
-				horizontal=&quot;true&quot;&gt;
-					&lt;mp:fabItem 
-						color=&quot;green&quot; 
-						icon=&quot;mdi-action-favorite&quot;/&gt;
-					&lt;mp:fabItem 
-						color=&quot;green&quot; 
-						icon=&quot;mdi-action-android&quot;/&gt;
-					&lt;mp:fabItem 
-						color=&quot;green&quot; 
-						icon=&quot;mdi-action-description&quot;/&gt;
-					&lt;mp:fabItem 
-						color=&quot;green&quot; 
-						icon=&quot;mdi-action-face-unlock&quot;/&gt;
+     					&lt;mp:fab color=&quot;green&quot; icon=&quot;search&quot; style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; horizontal=&quot;true&quot;&gt;
+     						&lt;mp:fabItem color=&quot;green&quot; icon=&quot;turned_in_not&quot;/&gt;
+				&lt;mp:fabItem color=&quot;green&quot; icon=&quot;android&quot;/&gt;
+				&lt;mp:fabItem color=&quot;green&quot; icon=&quot;description&quot;/&gt;
+				&lt;mp:fabItem color=&quot;green&quot; icon=&quot;lock_open&quot;/&gt;
 			&lt;/mp:fab&gt;
-		&lt;/div&gt;
+    				&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class=&quot;row&quot;&gt;
 	&lt;div class=&quot;col s12&quot;&gt;
 		&lt;h2&gt;Click to toogle&lt;/h2&gt;
-		&lt;p&gt;
-			By default the items show on hover. 
-			You can force the user to click on the button open the FAB.
-		&lt;/p&gt;
+		&lt;p&gt;By default the items show on hover. You can force the user to click on the button open the FAB.&lt;/p&gt;
 		&lt;div style=&quot;position: relative;&quot;&gt;
-			&lt;mp:fab 
-				clickToToggle=&quot;true&quot; 
-				color=&quot;deep-orange&quot; 
-				icon=&quot;mdi-action-list&quot; 
-				style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; 
-				horizontal=&quot;true&quot;&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-favorite&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-android&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-description&quot;/&gt;
-					&lt;mp:fabItem icon=&quot;mdi-action-face-unlock&quot;/&gt;
+     					&lt;mp:fab clickToToggle=&quot;true&quot; color=&quot;deep-orange&quot; icon=&quot;list&quot; style=&quot;position: absolute; display: inline-block; top: 0; right: 50px;&quot; horizontal=&quot;true&quot;&gt;
+				&lt;mp:fabItem icon=&quot;turned_in_not&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;android&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;description&quot;/&gt;
+				&lt;mp:fabItem icon=&quot;lock_open&quot;/&gt;
 			&lt;/mp:fab&gt;
-		&lt;/div&gt;
+    				&lt;/div&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </code>
@@ -188,7 +144,7 @@ public class FabBean implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	private String firstIcon = "mdi-action-favorite";
+	private String firstIcon = "android";
 
 	public String getFirstIcon() {
 		return firstIcon;
